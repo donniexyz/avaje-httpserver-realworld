@@ -17,4 +17,10 @@ public final class TagController {
   Tags getTagsHandler() {
     return new Tags(DB.sqlQuery(SELECT_TAGS).mapToScalar(String.class).findList());
   }
+
+  @Get("/throw-error")
+  @Roles(AppRole.ANYONE)
+  Tags getThrowErrorHandler() {
+    throw new RuntimeException("Intentionally error");
+  }
 }

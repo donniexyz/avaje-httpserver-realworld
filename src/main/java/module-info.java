@@ -2,39 +2,51 @@ import io.avaje.http.api.Path;
 
 @Path("/api")
 module avaje.realworld {
-  /// jwt validation
+  opens com.avaje.jdk.realworld;
+  opens com.avaje.jdk.realworld.models.entities;
+
+  // // jwt validation
   requires com.auth0.jwt;
-  /// JDBC extensions
+  // // JDBC extensions
   requires dev.mccue.jdbc;
-  /// Database connection pooling
+  // // Database connection pooling
   requires io.ebean.core;
   requires io.ebean.querybean;
-  /// Logging
+  // // Logging
   requires io.jstach.rainbowgum.slf4j;
-  /// HTTP server
+  // // HTTP server
   requires jdk.httpserver;
-  /// Postgres Driver
+  // // Postgres Driver
   requires org.postgresql.jdbc;
-  /// Turns text into url safe slug
+  // // Turns text into url safe slug
   requires slugify;
-  /// Configuration
+  // // Configuration
   requires io.avaje.config;
-  /// Dependency Injection
+  // // Dependency Injection
   requires io.avaje.inject;
-  /// JAX-Style controller generation
+  // // JAX-Style controller generation
   requires io.avaje.http.api;
-  /// Json
+  // // Json
   requires io.avaje.jsonb;
-  /// Jspecify
+  // // Jspecify
   requires org.jspecify;
-  /// Validation
+  // // Validation
   requires io.avaje.validation;
   requires io.avaje.validation.contraints;
   requires io.avaje.validation.http;
-  /// Json DI plugin
+  // // Json DI plugin
   requires io.avaje.jsonb.plugin;
-  /// jdk.httpserver wrapper
+  // // jdk.httpserver wrapper
   requires io.avaje.jex;
   requires io.avaje.jex.staticcontent;
   requires static io.avaje.spi;
+
+  provides io.avaje.inject.spi.InjectExtension with
+      com.avaje.jdk.realworld.RealworldModule;
+  provides io.avaje.jsonb.spi.JsonbExtension with
+      com.avaje.jdk.realworld.jsonb.GeneratedJsonComponent;
+  provides io.ebean.config.EntityClassRegister with
+      com.avaje.jdk.realworld.models.entities.EbeanEntityRegister;
+  provides io.ebean.config.DatabaseConfigProvider with
+      com.avaje.jdk.realworld.security.Encryptor;
 }
