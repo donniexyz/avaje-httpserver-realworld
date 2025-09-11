@@ -11,18 +11,19 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 public record SignUpRequest(@Valid SignUpUser user) {
 
-  public record SignUpUser(
-      @Length(min = 5) String username, @Email String email, @Length(min = 5) String password) {}
+    public String username() {
+        return user.username;
+    }
 
-  public String username() {
-    return user.username;
-  }
+    public String email() {
+        return user.email;
+    }
 
-  public String email() {
-    return user.email;
-  }
+    public String password() {
+        return user.password;
+    }
 
-  public String password() {
-    return user.password;
-  }
+    public record SignUpUser(
+            @Length(min = 5) String username, @Email String email, @Length(min = 5) String password) {
+    }
 }

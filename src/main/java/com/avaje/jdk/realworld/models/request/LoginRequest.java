@@ -9,13 +9,14 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 public record LoginRequest(@Valid LoginUser user) {
 
-  public record LoginUser(String email, String password) {}
+    public String email() {
+        return user.email;
+    }
 
-  public String email() {
-    return user.email;
-  }
+    public String password() {
+        return user.password;
+    }
 
-  public String password() {
-    return user.password;
-  }
+    public record LoginUser(String email, String password) {
+    }
 }

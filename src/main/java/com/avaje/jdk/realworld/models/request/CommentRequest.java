@@ -9,5 +9,6 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 public record CommentRequest(@Valid CommentRequestBody comment) {
 
-  public record CommentRequestBody(String body) {}
+    public record CommentRequestBody(String body) {
+    }
 }

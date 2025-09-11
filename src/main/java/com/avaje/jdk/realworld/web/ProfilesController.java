@@ -16,74 +16,74 @@ import io.ebean.annotation.Transactional;
 @Controller("/profiles")
 public final class ProfilesController {
 
-  private static final String PROFILE_SQL =
-      """
-      SELECT
-          username,
-          bio,
-          image,
-          EXISTS(
-              SELECT id
-              FROM realworld.follow
-              WHERE from_user_id = ? AND to_user_id = realworld.user.id
-          ) as following
-      FROM realworld.user
-      WHERE username = ?
-      """;
-  private static final String USER_ID = "userId";
-
-  @Get("/{username}")
-  ProfileResponse getProfileHandler(Context ctx, String username) {
-
-    return new ProfileResponse(getProfile(ctx, username));
-  }
-
-  private Profile getProfile(Context ctx, String username) {
-    return DB.findDto(Profile.class, PROFILE_SQL)
-        .setParameter(ctx.attribute(USER_ID))
-        .setParameter(username)
-        .findOne();
-  }
-
-  @Transactional
-  @Post("/{username}/follow")
-  ProfileResponse followUserHandler(Context ctx, String username) {
-
-    var userId = ctx.attribute(USER_ID);
-    DB.sqlUpdate(
+    private static final String PROFILE_SQL =
             """
-            INSERT INTO realworld.follow(from_user_id, to_user_id)
-            VALUES (?, (
-                SELECT id
-                FROM realworld.user
-                WHERE username = ?
-            ))
-            ON CONFLICT DO NOTHING
-            """)
-        .setParameter(userId)
-        .setParameter(username)
-        .execute();
+                    SELECT
+                        username,
+                        bio,
+                        image,
+                        EXISTS(
+                            SELECT id
+                            FROM realworld.follow
+                            WHERE from_user_id = ? AND to_user_id = realworld.user.id
+                        ) as following
+                    FROM realworld.user
+                    WHERE username = ?
+                    """;
+    private static final String USER_ID = "userId";
 
-    return new ProfileResponse(getProfile(ctx, username));
-  }
+    @Get("/{username}")
+    ProfileResponse getProfileHandler(Context ctx, String username) {
 
-  @Delete("/{username}/follow")
-  ProfileResponse unfollowUserHandler(Context ctx, String username) {
+        return new ProfileResponse(getProfile(ctx, username));
+    }
 
-    var userId = ctx.attribute(USER_ID);
-    DB.sqlUpdate(
-            """
-            DELETE FROM realworld.follow
-            WHERE from_user_id = ? AND to_user_id = (
-                SELECT id
-                FROM realworld.user
-                WHERE username = ?
-            )
-            """)
-        .setParameter(userId)
-        .setParameter(username)
-        .execute();
+    private Profile getProfile(Context ctx, String username) {
+        return DB.findDto(Profile.class, PROFILE_SQL)
+                .setParameter(ctx.attribute(USER_ID))
+                .setParameter(username)
+                .findOne();
+    }
 
-    return new ProfileResponse(getProfile(ctx, username));
-  }
+    @Transactional
+    @Post("/{username}/follow")
+    ProfileResponse followUserHandler(Context ctx, String username) {
+
+        var userId = ctx.attribute(USER_ID);
+        DB.sqlUpdate(
+                        """
+                                INSERT INTO realworld.follow(from_user_id, to_user_id)
+                                VALUES (?, (
+                                    SELECT id
+                                    FROM realworld.user
+                                    WHERE username = ?
+                                ))
+                                ON CONFLICT DO NOTHING
+                                """)
+                .setParameter(userId)
+                .setParameter(username)
+                .execute();
+
+        return new ProfileResponse(getProfile(ctx, username));
+    }
+
+    @Delete("/{username}/follow")
+    ProfileResponse unfollowUserHandler(Context ctx, String username) {
+
+        var userId = ctx.attribute(USER_ID);
+        DB.sqlUpdate(
+                        """
+                                DELETE FROM realworld.follow
+                                WHERE from_user_id = ? AND to_user_id = (
+                                    SELECT id
+                                    FROM realworld.user
+                                    WHERE username = ?
+                                )
+                                """)
+                .setParameter(userId)
+                .setParameter(username)
+                .execute();
+
+        return new ProfileResponse(getProfile(ctx, username));
+    }
 }

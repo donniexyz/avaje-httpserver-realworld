@@ -4,4 +4,5 @@ import com.avaje.jdk.realworld.models.Profile;
 import io.avaje.jsonb.Json;
 
 @Json
-public record ProfileResponse(Profile profile) {}
+public record ProfileResponse(Profile profile) {
+}

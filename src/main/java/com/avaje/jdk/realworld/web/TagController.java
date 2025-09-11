@@ -10,17 +10,17 @@ import io.ebean.DB;
 @Controller
 public final class TagController {
 
-  private static final String SELECT_TAGS = "SELECT name FROM realworld.tag";
+    private static final String SELECT_TAGS = "SELECT name FROM realworld.tag";
 
-  @Get("/tags")
-  @Roles(AppRole.ANYONE)
-  Tags getTagsHandler() {
-    return new Tags(DB.sqlQuery(SELECT_TAGS).mapToScalar(String.class).findList());
-  }
+    @Get("/tags")
+    @Roles(AppRole.ANYONE)
+    Tags getTagsHandler() {
+        return new Tags(DB.sqlQuery(SELECT_TAGS).mapToScalar(String.class).findList());
+    }
 
-  @Get("/throw-error")
-  @Roles(AppRole.ANYONE)
-  Tags getThrowErrorHandler() {
-    throw new RuntimeException("Intentionally error");
-  }
+    @Get("/throw-error")
+    @Roles(AppRole.ANYONE)
+    Tags getThrowErrorHandler() {
+        throw new RuntimeException("Intentionally error");
+    }
 }
