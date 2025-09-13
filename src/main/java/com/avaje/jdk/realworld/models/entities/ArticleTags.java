@@ -12,9 +12,11 @@ public class ArticleTags extends Model {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "article_id", nullable = false, insertable = false, updatable = false)
     private final ArticleEntity article;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "tag_id", nullable = false, insertable = false, updatable = false)
     private final TagEntity tag;
+
     @EmbeddedId
     private ArticleTagId id;
 

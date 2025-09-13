@@ -16,24 +16,32 @@ public class ArticleEntity extends Model {
 
     @OneToMany(mappedBy = "article", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private final List<ArticleTags> tags = new ArrayList<>();
+
     @Id
     @GeneratedValue
     private UUID id;
+
     @WhenCreated
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
     @WhenModified
     @Column(nullable = false)
     private LocalDateTime updatedAt;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
     private UserEntity author;
+
     @Column(nullable = false)
     private String slug;
+
     @Column(nullable = false)
     private String title;
+
     @Column(nullable = false)
     private String description;
+
     @Column(nullable = false)
     private String body;
 
