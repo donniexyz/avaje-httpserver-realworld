@@ -1,0 +1,2136 @@
+{
+  "reflection": [
+    {
+      "type": "[Lcom.fasterxml.jackson.databind.AbstractTypeResolver;"
+    },
+    {
+      "type": "[Lcom.fasterxml.jackson.databind.deser.Deserializers;"
+    },
+    {
+      "type": "[Lcom.fasterxml.jackson.databind.ser.Serializers;"
+    },
+    {
+      "type": "avaje.realworld.lookup.EbeanMethodLookup"
+    },
+    {
+      "type": "com.avaje.jdk.realworld.RealworldModule"
+    },
+    {
+      "type": "com.avaje.jdk.realworld.jsonb.GeneratedJsonComponent"
+    },
+    {
+      "type": "com.avaje.jdk.realworld.models.entities.ArticleEntity",
+      "allDeclaredFields": true,
+      "fields": [
+        {
+          "name": "_ebean_props"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.avaje.jdk.realworld.models.entities.ArticleTags",
+      "allDeclaredFields": true,
+      "fields": [
+        {
+          "name": "_ebean_props"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.avaje.jdk.realworld.models.entities.ArticleTags$ArticleTagId",
+      "allDeclaredFields": true,
+      "fields": [
+        {
+          "name": "_ebean_props"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.avaje.jdk.realworld.models.entities.CommentEntity",
+      "allDeclaredFields": true,
+      "fields": [
+        {
+          "name": "_ebean_props"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.avaje.jdk.realworld.models.entities.EbeanEntityRegister"
+    },
+    {
+      "type": "com.avaje.jdk.realworld.models.entities.FavoriteEntity",
+      "allDeclaredFields": true,
+      "fields": [
+        {
+          "name": "_ebean_props"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.avaje.jdk.realworld.models.entities.TagEntity",
+      "allDeclaredFields": true,
+      "fields": [
+        {
+          "name": "_ebean_props"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.avaje.jdk.realworld.models.entities.UserEntity",
+      "allDeclaredFields": true,
+      "fields": [
+        {
+          "name": "_ebean_props"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.avaje.jdk.realworld.models.request.valid.GeneratedValidatorComponent"
+    },
+    {
+      "type": "com.avaje.jdk.realworld.security.Encryptor"
+    },
+    {
+      "type": "com.fasterxml.jackson.annotation.JsonIgnore"
+    },
+    {
+      "type": "com.fasterxml.jackson.core.JsonParser"
+    },
+    {
+      "type": "com.fasterxml.jackson.databind.ObjectMapper"
+    },
+    {
+      "type": "com.fasterxml.jackson.databind.ext.Java7SupportImpl",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.intellij.rt.execution.application.AppMainV2$Agent",
+      "methods": [
+        {
+          "name": "premain",
+          "parameterTypes": [
+            "java.lang.String",
+            "java.lang.instrument.Instrumentation"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.sun.crypto.provider.AESCipher$General",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.crypto.provider.HmacCore$HmacSHA256",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.crypto.provider.PBKDF2Core$HmacSHA1",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.crypto.provider.PBKDF2Core$HmacSHA224",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.crypto.provider.PBKDF2Core$HmacSHA256",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.crypto.provider.PBKDF2Core$HmacSHA384",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.crypto.provider.PBKDF2Core$HmacSHA512",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "io.avaje.http.api.Validator"
+    },
+    {
+      "type": "io.avaje.http.inject.DefaultResolverProvider"
+    },
+    {
+      "type": "io.avaje.inject.aop.Aspect"
+    },
+    {
+      "type": "io.avaje.inject.events.spi.ObserverManagerPlugin"
+    },
+    {
+      "type": "io.avaje.jsonb.inject.DefaultJsonbProvider"
+    },
+    {
+      "type": "io.avaje.validation.http.HttpValidatorProvider"
+    },
+    {
+      "type": "io.avaje.validation.inject.spi.DefaultValidatorProvider"
+    },
+    {
+      "type": "io.ebean.enhance.Transformer",
+      "methods": [
+        {
+          "name": "premain",
+          "parameterTypes": [
+            "java.lang.String",
+            "java.lang.instrument.Instrumentation"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "io.ebean.platform.postgres.PostgresPlatformProvider"
+    },
+    {
+      "type": "io.ebeaninternal.json.DJsonService"
+    },
+    {
+      "type": "io.ebeaninternal.server.DContainerFactory"
+    },
+    {
+      "type": "io.ebeaninternal.server.profile.DMetricFactory"
+    },
+    {
+      "type": "io.ebeaninternal.server.profile.DProfileLocationFactory"
+    },
+    {
+      "type": "io.ebeaninternal.server.query.DFetchGroupService"
+    },
+    {
+      "type": "io.ebeaninternal.server.rawsql.DRawSqlService"
+    },
+    {
+      "type": "io.jstach.rainbowgum.slf4j.RainbowGumSLF4JServiceProvider"
+    },
+    {
+      "type": "io.jstach.rainbowgum.slf4j.SLF4JRainbowGumEagerLoad"
+    },
+    {
+      "type": "jakarta.validation.constraints.NotNull"
+    },
+    {
+      "type": "java.lang.SecurityManager",
+      "methods": [
+        {
+          "name": "checkPermission",
+          "parameterTypes": [
+            "java.security.Permission"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.lang.System",
+      "methods": [
+        {
+          "name": "getSecurityManager",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "java.lang.Thread",
+      "methods": [
+        {
+          "name": "isVirtual",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "java.security.AccessController",
+      "methods": [
+        {
+          "name": "doPrivileged",
+          "parameterTypes": [
+            "java.security.PrivilegedExceptionAction"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.sql.SQLException",
+      "fields": [
+        {
+          "name": "next"
+        }
+      ]
+    },
+    {
+      "type": "javax.annotation.PostConstruct"
+    },
+    {
+      "type": "javax.validation.constraints.NotNull"
+    },
+    {
+      "type": "org.joda.time.LocalDateTime"
+    },
+    {
+      "type": "org.postgresql.Driver"
+    },
+    {
+      "type": "org.postgresql.core.QueryExecutorCloseAction",
+      "fields": [
+        {
+          "name": "pgStream"
+        }
+      ]
+    },
+    {
+      "type": "org.postgresql.jdbc.PgStatement",
+      "fields": [
+        {
+          "name": "cancelTimerTask"
+        },
+        {
+          "name": "isClosed"
+        },
+        {
+          "name": "statementState"
+        }
+      ]
+    },
+    {
+      "type": "org.yaml.snakeyaml.Yaml"
+    },
+    {
+      "type": "sun.security.provider.DRBG",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.security.SecureRandomParameters"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.MD5",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.SHA",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.SHA2$SHA224",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.SHA2$SHA256",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.SHA5$SHA384",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.SHA5$SHA512",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "glob": "META-INF/ebean-generated-info.mf"
+    },
+    {
+      "glob": "META-INF/ebean-maven-version.txt"
+    },
+    {
+      "glob": "META-INF/ebean-version.mf"
+    },
+    {
+      "glob": "META-INF/ebean.mf"
+    },
+    {
+      "glob": "META-INF/maven/io.ebean/ebean-agent/pom.properties"
+    },
+    {
+      "glob": "META-INF/services/com.sun.net.httpserver.spi.HttpServerProvider"
+    },
+    {
+      "glob": "META-INF/services/io.avaje.config.ConfigExtension"
+    },
+    {
+      "glob": "META-INF/services/io.avaje.inject.spi.InjectExtension"
+    },
+    {
+      "glob": "META-INF/services/io.avaje.jex.spi.JexExtension"
+    },
+    {
+      "glob": "META-INF/services/io.avaje.jsonb.spi.JsonbExtension"
+    },
+    {
+      "glob": "META-INF/services/io.avaje.validation.spi.ValidationExtension"
+    },
+    {
+      "glob": "META-INF/services/io.ebean.cache.ServerCacheNotifyPlugin"
+    },
+    {
+      "glob": "META-INF/services/io.ebean.cache.ServerCachePlugin"
+    },
+    {
+      "glob": "META-INF/services/io.ebean.config.AutoConfigure"
+    },
+    {
+      "glob": "META-INF/services/io.ebean.config.DatabaseConfigProvider"
+    },
+    {
+      "glob": "META-INF/services/io.ebean.config.EntityClassRegister"
+    },
+    {
+      "glob": "META-INF/services/io.ebean.config.LookupProvider"
+    },
+    {
+      "glob": "META-INF/services/io.ebean.config.dbplatform.DatabasePlatformProvider"
+    },
+    {
+      "glob": "META-INF/services/io.ebean.core.type.ExtraTypeFactory"
+    },
+    {
+      "glob": "META-INF/services/io.ebean.core.type.ScalarJsonMapper"
+    },
+    {
+      "glob": "META-INF/services/io.ebean.core.type.ScalarTypeSetFactory"
+    },
+    {
+      "glob": "META-INF/services/io.ebean.datasource.DataSourceAlertFactory"
+    },
+    {
+      "glob": "META-INF/services/io.ebean.plugin.Plugin"
+    },
+    {
+      "glob": "META-INF/services/io.ebean.service.BootstrapService"
+    },
+    {
+      "glob": "META-INF/services/io.ebeaninternal.api.GeoTypeProvider"
+    },
+    {
+      "glob": "META-INF/services/io.ebeaninternal.api.SpiDdlGeneratorProvider"
+    },
+    {
+      "glob": "META-INF/services/io.ebeaninternal.api.SpiLoggerFactory"
+    },
+    {
+      "glob": "META-INF/services/io.ebeaninternal.server.autotune.AutoTuneServiceProvider"
+    },
+    {
+      "glob": "META-INF/services/io.jstach.rainbowgum.spi.RainbowGumServiceProvider"
+    },
+    {
+      "glob": "META-INF/services/java.lang.System$LoggerFinder"
+    },
+    {
+      "glob": "META-INF/services/java.net.spi.InetAddressResolverProvider"
+    },
+    {
+      "glob": "META-INF/services/java.net.spi.URLStreamHandlerProvider"
+    },
+    {
+      "glob": "META-INF/services/java.nio.channels.spi.SelectorProvider"
+    },
+    {
+      "glob": "META-INF/services/java.sql.Driver"
+    },
+    {
+      "glob": "META-INF/services/java.time.zone.ZoneRulesProvider"
+    },
+    {
+      "glob": "META-INF/services/org.slf4j.spi.SLF4JServiceProvider"
+    },
+    {
+      "glob": "application-test.properties"
+    },
+    {
+      "glob": "application-test.yaml"
+    },
+    {
+      "glob": "application-test.yml"
+    },
+    {
+      "glob": "application.properties"
+    },
+    {
+      "glob": "com/auth0/jwt/impl/ExpectedCheckHolder.class"
+    },
+    {
+      "glob": "com/auth0/jwt/interfaces/JWTPartsParser.class"
+    },
+    {
+      "glob": "com/auth0/jwt/interfaces/JWTVerifier.class"
+    },
+    {
+      "glob": "com/auth0/jwt/interfaces/Verification.class"
+    },
+    {
+      "glob": "com/avaje/jdk/realworld/models/request/CreateArticleRequest$CreateContent.class"
+    },
+    {
+      "glob": "ebean.mf"
+    },
+    {
+      "glob": "ebean.properties"
+    },
+    {
+      "glob": "io/avaje/applog/AppLog$Provider.class"
+    },
+    {
+      "glob": "io/avaje/json/JsonAdapter.class"
+    },
+    {
+      "glob": "io/avaje/json/JsonReader.class"
+    },
+    {
+      "glob": "io/avaje/json/JsonWriter.class"
+    },
+    {
+      "glob": "io/avaje/json/PropertyNames.class"
+    },
+    {
+      "glob": "io/avaje/json/stream/JsonStream$Builder.class"
+    },
+    {
+      "glob": "io/avaje/json/stream/JsonStream.class"
+    },
+    {
+      "glob": "io/avaje/json/stream/core/BufferRecycler.class"
+    },
+    {
+      "glob": "io/avaje/json/stream/core/JsonGenerator.class"
+    },
+    {
+      "glob": "io/avaje/json/stream/core/JsonParser.class"
+    },
+    {
+      "glob": "io/avaje/json/view/ViewBuilderAware.class"
+    },
+    {
+      "glob": "io/avaje/jsonb/AdapterFactory.class"
+    },
+    {
+      "glob": "io/avaje/jsonb/JsonType.class"
+    },
+    {
+      "glob": "io/avaje/jsonb/Jsonb$Builder.class"
+    },
+    {
+      "glob": "io/avaje/jsonb/Jsonb.class"
+    },
+    {
+      "glob": "io/avaje/jsonb/core/CoreAdapterBuilder$Lookup.class"
+    },
+    {
+      "glob": "io/avaje/jsonb/core/Util$GenericArrayTypeImpl.class"
+    },
+    {
+      "glob": "io/avaje/jsonb/core/Util$ParameterizedTypeImpl.class"
+    },
+    {
+      "glob": "io/avaje/jsonb/spi/GeneratedComponent.class"
+    },
+    {
+      "glob": "io/avaje/validation/Messages_en_US.properties"
+    },
+    {
+      "glob": "io/avaje/validation/Validator$Builder.class"
+    },
+    {
+      "glob": "io/avaje/validation/Validator.class"
+    },
+    {
+      "glob": "io/avaje/validation/adapter/AbstractConstraintAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/adapter/PrimitiveAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/adapter/ValidationAdapter$Primitive.class"
+    },
+    {
+      "glob": "io/avaje/validation/adapter/ValidationAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/adapter/ValidationContext$AdapterCreateRequest.class"
+    },
+    {
+      "glob": "io/avaje/validation/adapter/ValidationContext$Message.class"
+    },
+    {
+      "glob": "io/avaje/validation/adapter/ValidationContext$RequestBuilder.class"
+    },
+    {
+      "glob": "io/avaje/validation/adapter/ValidationContext.class"
+    },
+    {
+      "glob": "io/avaje/validation/adapter/ValidationRequest.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/Util$GenericArrayTypeImpl.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/Util$ParameterizedTypeImpl.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/BasicAdapters$AssertBooleanAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/BasicAdapters$NotEmptyAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/BasicAdapters$PatternAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/BasicAdapters$SizeAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/BasicAdapters$ValidAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/DateRangeAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/EmailAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/FuturePastAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$DecimalMaxAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$DecimalMinAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$DigitsAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$MaxAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$MaxBigDecimal.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$MaxBigInteger.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$MinAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$MinBigDecimal.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$MinBigInteger.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$NegativeAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$NumberAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$PositiveAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/UriAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/core/adapters/UuidAdapter.class"
+    },
+    {
+      "glob": "io/avaje/validation/spi/AnnotationFactory.class"
+    },
+    {
+      "glob": "io/avaje/validation/spi/GeneratedComponent.class"
+    },
+    {
+      "glob": "io/avaje/validation/spi/MessageInterpolator.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/AbstractChangePublisher.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/Actor.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/ArrayArgLogEvent.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/BaseComposite.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/CompositeLogAppender.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/DefaultLogConfig$DefaultChangePublisher.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/DefaultLogEvent.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/DirectLogAppender.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/IgnoreChangePublisher.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/InternalLogAppender.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/InternalRootRouter.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/KeyValues.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LevelResolver$LevelConfig.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LevelResolver.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/ListLogProperties.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogAppender.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogAppenderRegistry.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogConfig$ChangePublisher.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogConfig$ConfigSupport.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogConfig.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogEncoder$Buffer.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogEncoder$BufferHints.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogEncoder.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogEncoderRegistry.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogEvent.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogEventConsumer.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogFormatter$EventFormatter.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogFormatter$LevelFormatter.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogFormatter$ThrowableFormatter.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogFormatter$TimestampFormatter.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogFormatter.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogLifecycle.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogMessageFormatter.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogOutput$ContentType.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogOutput$OutputProvider.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogOutput.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogOutputRegistry.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogProperties$FoundProperty.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogProperties.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogProperty$Property.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogProperty$PropertyGetter$ChildPropertyGetter.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogProperty$PropertyGetter.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogProperty$PropertyProblem.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogProperty$PropertyValue.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogProperty$RequiredResult.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogProperty$Result$Error.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogProperty$Result$Missing.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogProperty$Result$Success$PropertySuccess.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogProperty$Result$Success$ValueSuccess.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogProperty$Result$Success.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogProperty$Result.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogProviderRef.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogPublisher$PublisherProvider.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogPublisher$SyncLogPublisher.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogPublisherRegistry.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogResponse$Status$ErrorStatus.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogResponse$Status.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogRouter$RootRouter.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogRouter$Route.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogRouter$Router.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/LogRouter.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/OneArgLogEvent.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/RainbowGum.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/ServiceRegistry.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/Shutdownable.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/SingleAsyncRootRouter.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/SingleSyncRootRouter.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/TwoArgLogEvent.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/slf4j/BaseLogger.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/slf4j/ForwardingLogger.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/slf4j/LevelChangeable.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/slf4j/LevelLogger$DebugLogger.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/slf4j/LevelLogger$ErrorLogger.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/slf4j/LevelLogger$InfoLogger.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/slf4j/LevelLogger$OffLogger.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/slf4j/LevelLogger$TraceLogger.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/slf4j/LevelLogger$WarnLogger.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/slf4j/LevelLogger.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/slf4j/LogEventHandler.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/slf4j/RainbowGumLoggerFactory$LoggerDecorator.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/slf4j/ReplaceableLogger.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/slf4j/WrappingLogger.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/slf4j/spi/LoggerDecoratorService$DepthAwareLogger.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/spi/RainbowGumServiceProvider$Configurator.class"
+    },
+    {
+      "glob": "io/jstach/rainbowgum/spi/RainbowGumServiceProvider$RainbowGumEagerLoad.class"
+    },
+    {
+      "glob": "java/io/Serializable.class"
+    },
+    {
+      "glob": "java/lang/AutoCloseable.class"
+    },
+    {
+      "glob": "java/lang/CharSequence.class"
+    },
+    {
+      "glob": "java/lang/Class.class"
+    },
+    {
+      "glob": "java/lang/Cloneable.class"
+    },
+    {
+      "glob": "java/lang/Comparable.class"
+    },
+    {
+      "glob": "java/lang/Enum.class"
+    },
+    {
+      "glob": "java/lang/Exception.class"
+    },
+    {
+      "glob": "java/lang/IllegalArgumentException.class"
+    },
+    {
+      "glob": "java/lang/IllegalStateException.class"
+    },
+    {
+      "glob": "java/lang/Iterable.class"
+    },
+    {
+      "glob": "java/lang/Object.class"
+    },
+    {
+      "glob": "java/lang/Record.class"
+    },
+    {
+      "glob": "java/lang/RuntimeException.class"
+    },
+    {
+      "glob": "java/lang/String.class"
+    },
+    {
+      "glob": "java/lang/Throwable.class"
+    },
+    {
+      "glob": "java/lang/constant/Constable.class"
+    },
+    {
+      "glob": "java/lang/constant/ConstantDesc.class"
+    },
+    {
+      "glob": "java/lang/invoke/TypeDescriptor$OfField.class"
+    },
+    {
+      "glob": "java/lang/invoke/TypeDescriptor.class"
+    },
+    {
+      "glob": "java/lang/reflect/AnnotatedElement.class"
+    },
+    {
+      "glob": "java/lang/reflect/GenericArrayType.class"
+    },
+    {
+      "glob": "java/lang/reflect/GenericDeclaration.class"
+    },
+    {
+      "glob": "java/lang/reflect/ParameterizedType.class"
+    },
+    {
+      "glob": "java/lang/reflect/Type.class"
+    },
+    {
+      "glob": "java/security/GeneralSecurityException.class"
+    },
+    {
+      "glob": "java/security/InvalidKeyException.class"
+    },
+    {
+      "glob": "java/security/KeyException.class"
+    },
+    {
+      "glob": "java/security/NoSuchAlgorithmException.class"
+    },
+    {
+      "glob": "java/security/SignatureException.class"
+    },
+    {
+      "glob": "java/util/AbstractCollection.class"
+    },
+    {
+      "glob": "java/util/AbstractList.class"
+    },
+    {
+      "glob": "java/util/AbstractMap.class"
+    },
+    {
+      "glob": "java/util/ArrayList.class"
+    },
+    {
+      "glob": "java/util/Collection.class"
+    },
+    {
+      "glob": "java/util/HashMap.class"
+    },
+    {
+      "glob": "java/util/List.class"
+    },
+    {
+      "glob": "java/util/Map.class"
+    },
+    {
+      "glob": "java/util/Optional.class"
+    },
+    {
+      "glob": "java/util/RandomAccess.class"
+    },
+    {
+      "glob": "java/util/SequencedCollection.class"
+    },
+    {
+      "glob": "java/util/UUID.class"
+    },
+    {
+      "glob": "java/util/function/Supplier.class"
+    },
+    {
+      "glob": "org/postgresql/driverconfig.properties"
+    },
+    {
+      "glob": "org/postgresql/translation/messages.properties"
+    },
+    {
+      "glob": "org/postgresql/translation/messages_en.properties"
+    },
+    {
+      "glob": "org/postgresql/translation/messages_en_US.properties"
+    },
+    {
+      "glob": "org/slf4j/Logger.class"
+    },
+    {
+      "glob": "test-ebean.properties"
+    },
+    {
+      "module": "avaje.realworld",
+      "glob": "com/avaje/jdk/realworld/models/request/CreateArticleRequest$CreateContent.class"
+    },
+    {
+      "module": "avaje.realworld",
+      "glob": "index.html"
+    },
+    {
+      "module": "com.auth0.jwt",
+      "glob": "com/auth0/jwt/impl/ExpectedCheckHolder.class"
+    },
+    {
+      "module": "com.auth0.jwt",
+      "glob": "com/auth0/jwt/interfaces/JWTPartsParser.class"
+    },
+    {
+      "module": "com.auth0.jwt",
+      "glob": "com/auth0/jwt/interfaces/JWTVerifier.class"
+    },
+    {
+      "module": "com.auth0.jwt",
+      "glob": "com/auth0/jwt/interfaces/Verification.class"
+    },
+    {
+      "module": "io.avaje.applog",
+      "glob": "io/avaje/applog/AppLog$Provider.class"
+    },
+    {
+      "module": "io.avaje.config",
+      "glob": "application-test.properties"
+    },
+    {
+      "module": "io.avaje.config",
+      "glob": "application-test.yaml"
+    },
+    {
+      "module": "io.avaje.config",
+      "glob": "application-test.yml"
+    },
+    {
+      "module": "io.avaje.config",
+      "glob": "application.properties"
+    },
+    {
+      "module": "io.avaje.config",
+      "glob": "ebean.properties"
+    },
+    {
+      "module": "io.avaje.config",
+      "glob": "test-ebean.properties"
+    },
+    {
+      "module": "io.avaje.json",
+      "glob": "io/avaje/json/JsonAdapter.class"
+    },
+    {
+      "module": "io.avaje.json",
+      "glob": "io/avaje/json/JsonReader.class"
+    },
+    {
+      "module": "io.avaje.json",
+      "glob": "io/avaje/json/JsonWriter.class"
+    },
+    {
+      "module": "io.avaje.json",
+      "glob": "io/avaje/json/PropertyNames.class"
+    },
+    {
+      "module": "io.avaje.json",
+      "glob": "io/avaje/json/stream/JsonStream$Builder.class"
+    },
+    {
+      "module": "io.avaje.json",
+      "glob": "io/avaje/json/stream/JsonStream.class"
+    },
+    {
+      "module": "io.avaje.json",
+      "glob": "io/avaje/json/stream/core/BufferRecycler.class"
+    },
+    {
+      "module": "io.avaje.json",
+      "glob": "io/avaje/json/stream/core/JsonGenerator.class"
+    },
+    {
+      "module": "io.avaje.json",
+      "glob": "io/avaje/json/stream/core/JsonParser.class"
+    },
+    {
+      "module": "io.avaje.json",
+      "glob": "io/avaje/json/view/ViewBuilderAware.class"
+    },
+    {
+      "module": "io.avaje.jsonb",
+      "glob": "io/avaje/jsonb/AdapterFactory.class"
+    },
+    {
+      "module": "io.avaje.jsonb",
+      "glob": "io/avaje/jsonb/JsonType.class"
+    },
+    {
+      "module": "io.avaje.jsonb",
+      "glob": "io/avaje/jsonb/Jsonb$Builder.class"
+    },
+    {
+      "module": "io.avaje.jsonb",
+      "glob": "io/avaje/jsonb/Jsonb.class"
+    },
+    {
+      "module": "io.avaje.jsonb",
+      "glob": "io/avaje/jsonb/core/CoreAdapterBuilder$Lookup.class"
+    },
+    {
+      "module": "io.avaje.jsonb",
+      "glob": "io/avaje/jsonb/core/Util$GenericArrayTypeImpl.class"
+    },
+    {
+      "module": "io.avaje.jsonb",
+      "glob": "io/avaje/jsonb/core/Util$ParameterizedTypeImpl.class"
+    },
+    {
+      "module": "io.avaje.jsonb",
+      "glob": "io/avaje/jsonb/spi/GeneratedComponent.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/Messages.properties"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/Messages_en.properties"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/Messages_en_US.properties"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/Validator$Builder.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/Validator.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/adapter/AbstractConstraintAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/adapter/PrimitiveAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/adapter/ValidationAdapter$Primitive.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/adapter/ValidationAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/adapter/ValidationContext$AdapterCreateRequest.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/adapter/ValidationContext$Message.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/adapter/ValidationContext$RequestBuilder.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/adapter/ValidationContext.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/adapter/ValidationRequest.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/Util$GenericArrayTypeImpl.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/Util$ParameterizedTypeImpl.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/BasicAdapters$AssertBooleanAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/BasicAdapters$NotEmptyAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/BasicAdapters$PatternAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/BasicAdapters$SizeAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/BasicAdapters$ValidAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/DateRangeAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/EmailAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/FuturePastAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$DecimalMaxAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$DecimalMinAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$DigitsAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$MaxAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$MaxBigDecimal.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$MaxBigInteger.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$MinAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$MinBigDecimal.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$MinBigInteger.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$NegativeAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$NumberAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/NumberAdapters$PositiveAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/UriAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/core/adapters/UuidAdapter.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/spi/AnnotationFactory.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/spi/GeneratedComponent.class"
+    },
+    {
+      "module": "io.avaje.validation",
+      "glob": "io/avaje/validation/spi/MessageInterpolator.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/AbstractChangePublisher.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/Actor.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/ArrayArgLogEvent.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/BaseComposite.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/CompositeLogAppender.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/DefaultLogConfig$DefaultChangePublisher.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/DefaultLogEvent.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/DirectLogAppender.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/IgnoreChangePublisher.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/InternalLogAppender.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/InternalRootRouter.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/KeyValues.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LevelResolver$LevelConfig.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LevelResolver.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/ListLogProperties.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogAppender.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogAppenderRegistry.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogConfig$ChangePublisher.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogConfig$ConfigSupport.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogConfig.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogEncoder$Buffer.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogEncoder$BufferHints.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogEncoder.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogEncoderRegistry.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogEvent.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogEventConsumer.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogFormatter$EventFormatter.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogFormatter$LevelFormatter.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogFormatter$ThrowableFormatter.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogFormatter$TimestampFormatter.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogFormatter.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogLifecycle.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogMessageFormatter.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogOutput$ContentType.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogOutput$OutputProvider.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogOutput.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogOutputRegistry.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogProperties$FoundProperty.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogProperties.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogProperty$Property.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogProperty$PropertyGetter$ChildPropertyGetter.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogProperty$PropertyGetter.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogProperty$PropertyProblem.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogProperty$PropertyValue.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogProperty$RequiredResult.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogProperty$Result$Error.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogProperty$Result$Missing.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogProperty$Result$Success$PropertySuccess.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogProperty$Result$Success$ValueSuccess.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogProperty$Result$Success.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogProperty$Result.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogProviderRef.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogPublisher$PublisherProvider.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogPublisher$SyncLogPublisher.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogPublisherRegistry.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogResponse$Status$ErrorStatus.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogResponse$Status.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogRouter$RootRouter.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogRouter$Route.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogRouter$Router.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/LogRouter.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/OneArgLogEvent.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/RainbowGum.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/ServiceRegistry.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/Shutdownable.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/SingleAsyncRootRouter.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/SingleSyncRootRouter.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/TwoArgLogEvent.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/spi/RainbowGumServiceProvider$Configurator.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum",
+      "glob": "io/jstach/rainbowgum/spi/RainbowGumServiceProvider$RainbowGumEagerLoad.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum.slf4j",
+      "glob": "io/jstach/rainbowgum/slf4j/BaseLogger.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum.slf4j",
+      "glob": "io/jstach/rainbowgum/slf4j/ForwardingLogger.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum.slf4j",
+      "glob": "io/jstach/rainbowgum/slf4j/LevelChangeable.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum.slf4j",
+      "glob": "io/jstach/rainbowgum/slf4j/LevelLogger$DebugLogger.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum.slf4j",
+      "glob": "io/jstach/rainbowgum/slf4j/LevelLogger$ErrorLogger.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum.slf4j",
+      "glob": "io/jstach/rainbowgum/slf4j/LevelLogger$InfoLogger.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum.slf4j",
+      "glob": "io/jstach/rainbowgum/slf4j/LevelLogger$OffLogger.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum.slf4j",
+      "glob": "io/jstach/rainbowgum/slf4j/LevelLogger$TraceLogger.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum.slf4j",
+      "glob": "io/jstach/rainbowgum/slf4j/LevelLogger$WarnLogger.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum.slf4j",
+      "glob": "io/jstach/rainbowgum/slf4j/LevelLogger.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum.slf4j",
+      "glob": "io/jstach/rainbowgum/slf4j/LogEventHandler.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum.slf4j",
+      "glob": "io/jstach/rainbowgum/slf4j/RainbowGumLoggerFactory$LoggerDecorator.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum.slf4j",
+      "glob": "io/jstach/rainbowgum/slf4j/ReplaceableLogger.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum.slf4j",
+      "glob": "io/jstach/rainbowgum/slf4j/WrappingLogger.class"
+    },
+    {
+      "module": "io.jstach.rainbowgum.slf4j",
+      "glob": "io/jstach/rainbowgum/slf4j/spi/LoggerDecoratorService$DepthAwareLogger.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/io/Serializable.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/AutoCloseable.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/CharSequence.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/Class.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/Cloneable.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/Comparable.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/Enum.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/Exception.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/IllegalArgumentException.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/IllegalStateException.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/Iterable.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/Object.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/Record.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/RuntimeException.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/String.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/Throwable.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/constant/Constable.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/constant/ConstantDesc.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/invoke/TypeDescriptor$OfField.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/invoke/TypeDescriptor.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/reflect/AnnotatedElement.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/reflect/GenericArrayType.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/reflect/GenericDeclaration.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/reflect/ParameterizedType.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/lang/reflect/Type.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/security/GeneralSecurityException.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/security/InvalidKeyException.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/security/KeyException.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/security/NoSuchAlgorithmException.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/security/SignatureException.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/util/AbstractCollection.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/util/AbstractList.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/util/AbstractMap.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/util/ArrayList.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/util/Collection.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/util/HashMap.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/util/List.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/util/Map.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/util/Optional.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/util/RandomAccess.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/util/SequencedCollection.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/util/UUID.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/util/function/Supplier.class"
+    },
+    {
+      "module": "java.base",
+      "glob": "jdk/internal/icu/impl/data/icudt76b/nfkc.nrm"
+    },
+    {
+      "module": "java.base",
+      "glob": "jdk/internal/icu/impl/data/icudt76b/uprops.icu"
+    },
+    {
+      "module": "java.base",
+      "glob": "sun/net/idn/uidna.spp"
+    },
+    {
+      "module": "java.base",
+      "glob": "sun/net/www/content-types.properties"
+    },
+    {
+      "module": "org.postgresql.jdbc",
+      "glob": "org/postgresql/driverconfig.properties"
+    },
+    {
+      "module": "org.postgresql.jdbc",
+      "glob": "org/postgresql/translation/messages.properties"
+    },
+    {
+      "module": "org.postgresql.jdbc",
+      "glob": "org/postgresql/translation/messages_en.properties"
+    },
+    {
+      "module": "org.postgresql.jdbc",
+      "glob": "org/postgresql/translation/messages_en_US.properties"
+    },
+    {
+      "module": "org.slf4j",
+      "glob": "org/slf4j/Logger.class"
+    }
+  ],
+  "bundles": [
+    {
+      "name": "io.avaje.validation.Messages",
+      "locales": [
+        "en-US"
+      ]
+    },
+    {
+      "name": "org.postgresql.translation.messages",
+      "locales": [
+        "en-US"
+      ]
+    }
+  ],
+  "jni": [
+    {
+      "type": "com.avaje.jdk.realworld.AvajeRealWorldApplication",
+      "methods": [
+        {
+          "name": "main",
+          "parameterTypes": [
+            "java.lang.String[]"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.lang.InternalError",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.instrument.InstrumentationImpl",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "boolean",
+            "boolean",
+            "boolean"
+          ]
+        },
+        {
+          "name": "loadClassAndCallAgentmain",
+          "parameterTypes": [
+            "java.lang.String",
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "loadClassAndCallPremain",
+          "parameterTypes": [
+            "java.lang.String",
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "transform",
+          "parameterTypes": [
+            "java.lang.Module",
+            "java.lang.ClassLoader",
+            "java.lang.String",
+            "java.lang.Class",
+            "java.security.ProtectionDomain",
+            "byte[]",
+            "boolean"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.launcher.LauncherHelper",
+      "fields": [
+        {
+          "name": "isStaticMain"
+        },
+        {
+          "name": "noArgMain"
+        }
+      ],
+      "methods": [
+        {
+          "name": "checkAndLoadMain",
+          "parameterTypes": [
+            "boolean",
+            "int",
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "getApplicationClass",
+          "parameterTypes": []
+        },
+        {
+          "name": "makePlatformString",
+          "parameterTypes": [
+            "boolean",
+            "byte[]"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.management.VMManagementImpl",
+      "fields": [
+        {
+          "name": "compTimeMonitoringSupport"
+        },
+        {
+          "name": "currentThreadCpuTimeSupport"
+        },
+        {
+          "name": "objectMonitorUsageSupport"
+        },
+        {
+          "name": "otherThreadCpuTimeSupport"
+        },
+        {
+          "name": "remoteDiagnosticCommandsSupport"
+        },
+        {
+          "name": "synchronizerUsageSupport"
+        },
+        {
+          "name": "threadAllocatedMemorySupport"
+        },
+        {
+          "name": "threadContentionMonitoringSupport"
+        }
+      ]
+    }
+  ]
+}

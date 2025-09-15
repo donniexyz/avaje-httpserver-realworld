@@ -16,6 +16,7 @@
     <maven.compiler.release>24</maven.compiler.release>
     <maven.compiler.proc>full</maven.compiler.proc>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <graalvm.version>24.0.2</graalvm.version>
   </properties>
 
   <dependencies>
@@ -199,7 +200,7 @@
           </execution>
         </executions>
       </plugin>
-      
+
       <!-- Adds META-INF/services entries to module-info -->
       <plugin>
           <groupId>io.avaje</groupId>
@@ -215,4 +216,79 @@
         </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>native</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.graalvm.buildtools</groupId>
+            <artifactId>native-maven-plugin</artifactId>
+            <version>0.10.2</version>
+            <extensions>true</extensions>
+            <executions>
+              <execution>
+                <id>build-native</id>
+                <goals>
+                  <goal>compile-no-fork</goal>
+                </goals>
+                <phase>package</phase>
+              </execution>
+            </executions>
+            <configuration>
+              <verbose>true</verbose>
+              <mainClass>com.avaje.jdk.realworld.AvajeRealWorldApplication</mainClass>
+              <buildArgs>
+                <buildArg>--emit build-report</buildArg>
+                <buildArg>--no-fallback</buildArg>
+                <buildArg>--enable-sbom</buildArg>
+                <buildArg>--enable-url-protocols=http,https</buildArg>
+                <buildArg>-H:+UnlockExperimentalVMOptions</buildArg>
+                <buildArg>-H:Log=registerResource:3</buildArg>
+                <buildArg>-H:IncludeResources=".*.sql|.*.html|.*.css|.*.js|.*.ico|.*.png"</buildArg>
+              </buildArgs>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>native_cfg</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.graalvm.buildtools</groupId>
+            <artifactId>native-maven-plugin</artifactId>
+            <version>0.10.2</version>
+            <extensions>true</extensions>
+            <executions>
+              <execution>
+                <id>build-native</id>
+                <goals>
+                  <goal>compile-no-fork</goal>
+                </goals>
+                <phase>package</phase>
+              </execution>
+            </executions>
+            <configuration>
+              <verbose>true</verbose>
+              <mainClass>com.avaje.jdk.realworld.AvajeRealWorldApplication</mainClass>
+              <buildArgs>
+                <buildArg>--emit build-report</buildArg>
+                <buildArg>--no-fallback</buildArg>
+                <buildArg>--enable-sbom</buildArg>
+                <buildArg>--enable-url-protocols=http,https</buildArg>
+                <buildArg>-H:+UnlockExperimentalVMOptions</buildArg>
+                <buildArg>-H:ConfigurationFileDirectories=./</buildArg>
+                <buildArg>-H:Log=registerResource:3</buildArg>
+                <buildArg>-H:IncludeResources=".*.sql|.*.html|.*.css|.*.js|.*.ico|.*.png"</buildArg>
+              </buildArgs>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+  </profiles>
 </project>

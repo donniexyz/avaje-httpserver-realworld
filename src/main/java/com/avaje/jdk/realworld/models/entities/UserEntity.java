@@ -17,7 +17,7 @@ public class UserEntity extends Model {
     @Column(nullable = false, unique = true)
     private String username;
 
-    @Encrypted
+    @Encrypted(dbEncryption = false)
     @Column(nullable = false)
     private String passwordHash;
 

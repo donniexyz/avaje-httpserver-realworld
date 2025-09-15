@@ -1,0 +1,47 @@
+DEVELOPMENT NOTES
+=================
+
+1. Failed: @Encrypted
+
+    On @Encrypted UserEntity.passwordHash failed because pg bug complain on pgp_sym_encrypt() parameter types!!
+
+    Now use java field encryption:@Encrypted(dbEncryption = false)
+
+
+2. @EmbeddedId or @Embeddable problems
+
+    To compile/run need to add this in module-info.java:
+        - opens com.avaje.jdk.realworld.models.entities;
+
+    graalvm still failed to recognise @Embeddable com.avaje.jdk.realworld.models.entities.ArticleTags.ArticleTagId
+    and need to use agentlib
+
+3. use agentlib to increase graalvm code coverage
+    later on during creating native image, need to get help from agentlib:
+
+        -agentlib:native-image-agent=config-output-dir=./
+    or
+        -agentlib:native-image-agent=config-output-dir=./,enable-all-config-files
+
+    which when running the app will produce .json files (reachability-metadata.json)
+
+    the json is to be processed by native compilation
+        <buildArg>-H:ConfigurationFileDirectories=./</buildArg>
+
+
+4. --pgo-instrument does not work for graalvm 24.0.2
+
+
+5. try to use unit test for graalvm code coverage:
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <argLine>-agentlib:native-image-agent=config-output-dir=target/native-config</argLine>
+          </configuration>
+        </plugin>
+
+5.
+
+
+
