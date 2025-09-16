@@ -134,7 +134,7 @@ public final class UserController {
     }
 
     @Get("/user")
-    UserResponse getCurrentUserHandler(Context ctx) {
+    public UserResponse getCurrentUserHandler(Context ctx) {
 
         UUID userId = ctx.attribute(USER_ID);
         var result = new QUserEntity().select("username, email, bio, image").id.eq(userId).findOne();
@@ -144,7 +144,7 @@ public final class UserController {
     }
 
     @Put("/user")
-    UserResponse updateUserHandler(Context ctx, UpdateUserRequest request) {
+    public UserResponse updateUserHandler(Context ctx, UpdateUserRequest request) {
 
         UUID userId = ctx.attribute(USER_ID);
 
@@ -173,7 +173,7 @@ public final class UserController {
     }
 
     @Delete("/user")
-    void deleteUser(Context ctx) {
+    public void deleteUser(Context ctx) {
 
         UUID userId = ctx.attribute(USER_ID);
         new UserEntity().id(userId).delete();

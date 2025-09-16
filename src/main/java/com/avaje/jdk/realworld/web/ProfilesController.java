@@ -33,7 +33,7 @@ public final class ProfilesController {
     private static final String USER_ID = "userId";
 
     @Get("/{username}")
-    ProfileResponse getProfileHandler(Context ctx, String username) {
+    public ProfileResponse getProfileHandler(Context ctx, String username) {
 
         return new ProfileResponse(getProfile(ctx, username));
     }
@@ -68,7 +68,7 @@ public final class ProfilesController {
     }
 
     @Delete("/{username}/follow")
-    ProfileResponse unfollowUserHandler(Context ctx, String username) {
+    public ProfileResponse unfollowUserHandler(Context ctx, String username) {
 
         var userId = ctx.attribute(USER_ID);
         DB.sqlUpdate(

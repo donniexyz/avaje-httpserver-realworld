@@ -75,7 +75,7 @@ public class ArticleController {
     private static final String USER_ID = "userId";
 
     @Get("/")
-    String listArticlesHandler(
+    public String listArticlesHandler(
             Context ctx,
             String tag,
             String favorited,
@@ -206,7 +206,7 @@ public class ArticleController {
     }
 
     @Get("/feed")
-    String feedArticlesHandler(Context ctx, @Default("20") int limit, @Default("0") int offset) {
+    public String feedArticlesHandler(Context ctx, @Default("20") int limit, @Default("0") int offset) {
 
         var userId = ctx.attribute(USER_ID);
         var query = new ArrayList<SQLFragment>();
@@ -292,7 +292,7 @@ public class ArticleController {
     }
 
     @Get("/{slug}")
-    String getArticleHandler(Context ctx, String slug) {
+    public String getArticleHandler(Context ctx, String slug) {
         var userId = ctx.attribute(USER_ID);
         return DB.sqlQuery(
                         """
@@ -357,7 +357,7 @@ public class ArticleController {
     }
 
     @Post("/")
-    String createArticleHandler(Context ctx, CreateArticleRequest req) {
+    public String createArticleHandler(Context ctx, CreateArticleRequest req) {
         var userId = ctx.attribute(USER_ID);
 
         if (!(req
@@ -475,7 +475,7 @@ public class ArticleController {
     }
 
     @Put("/{slug}")
-    String updateArticleHandler(Context ctx, String slug, UpdateArticleRequest req) {
+    public String updateArticleHandler(Context ctx, String slug, UpdateArticleRequest req) {
         var userId = ctx.attribute(USER_ID);
 
         UUID articleId = null;
@@ -537,7 +537,7 @@ public class ArticleController {
     }
 
     @Delete("/{slug}")
-    void deleteArticleHandler(Context ctx, String slug) {
+    public void deleteArticleHandler(Context ctx, String slug) {
         var userId = ctx.attribute(USER_ID);
 
         var result =
@@ -554,7 +554,7 @@ public class ArticleController {
     }
 
     @Post("/{slug}/comments")
-    String addCommentsToArticleHandler(Context ctx, CommentRequest request, String slug) {
+    public String addCommentsToArticleHandler(Context ctx, CommentRequest request, String slug) {
         var body = request.comment().body();
         var userId = ctx.attribute(USER_ID);
 
@@ -617,7 +617,7 @@ public class ArticleController {
     }
 
     @Get("/{slug}/comments")
-    String getCommentsFromArticleHandler(Context ctx, String slug) {
+    public String getCommentsFromArticleHandler(Context ctx, String slug) {
         var userId = ctx.attribute(USER_ID);
 
         return DB.sqlQuery(
@@ -659,7 +659,7 @@ public class ArticleController {
     }
 
     @Delete("/{slug}/comments/{commentId}")
-    void deleteCommentHandler(Context ctx, String slug, UUID commentId) {
+    public void deleteCommentHandler(Context ctx, String slug, UUID commentId) {
         var userId = ctx.attribute(USER_ID);
         var result =
                 DB.sqlUpdate(
@@ -684,7 +684,7 @@ public class ArticleController {
     }
 
     @Post("/{slug}/favorite")
-    String favoriteArticleHandler(Context ctx, String slug) {
+    public String favoriteArticleHandler(Context ctx, String slug) {
         var userId = ctx.attribute(USER_ID);
 
         var articleId = findArticle(slug);
@@ -715,7 +715,7 @@ public class ArticleController {
     }
 
     @Delete("/{slug}/favorite")
-    String unfavoriteArticleHandler(Context ctx, String slug) {
+    public String unfavoriteArticleHandler(Context ctx, String slug) {
         var userId = ctx.attribute(USER_ID);
         var articleId = findArticle(slug);
         DB.sqlUpdate(
