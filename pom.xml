@@ -17,6 +17,8 @@
     <maven.compiler.proc>full</maven.compiler.proc>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <graalvm.version>24.0.2</graalvm.version>
+
+    <avaje.validator.version>2.12</avaje.validator.version>
   </properties>
 
   <dependencies>
@@ -138,6 +140,13 @@
       <artifactId>querybean-generator</artifactId>
       <scope>provided</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.38</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -145,6 +154,37 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.14.0</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>1.18.38</version>
+            </path>
+            <path>
+              <groupId>io.avaje</groupId>
+              <artifactId>avaje-jsonb-generator</artifactId>
+            </path>
+              <path>
+                  <groupId>io.avaje</groupId>
+                  <artifactId>avaje-validator-generator</artifactId>
+              </path>
+            <path>
+              <groupId>io.avaje</groupId>
+              <artifactId>avaje-inject-generator</artifactId>
+            </path>
+            <path>
+              <groupId>io.ebean</groupId>
+              <artifactId>querybean-generator</artifactId>
+            </path>
+            <path>
+              <groupId>io.avaje</groupId>
+              <artifactId>avaje-http-jex-generator</artifactId>
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
       </plugin>
 
 	  <!-- Create Modular Jar and copy dependencies -->
@@ -181,6 +221,11 @@
         <artifactId>ebean-maven-plugin</artifactId>
         <executions>
           <execution>
+            <phase>process-classes</phase>
+            <configuration>
+              <packages>com.avaje.jdk.realworld.**</packages>
+              <transformArgs>debug=1</transformArgs>
+            </configuration>
             <goals>
               <goal>enhance</goal>
               <goal>testEnhance</goal>
@@ -278,5 +323,5 @@
       </build>
     </profile>
 
-  </profiles>
+    </profiles>
 </project>
