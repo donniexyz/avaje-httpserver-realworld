@@ -43,6 +43,8 @@ module avaje.realworld {
   requires jakarta.inject;
   requires static lombok;
 
+  exports com.avaje.jdk.realworld.models;
+
   provides io.avaje.inject.spi.InjectExtension with
       com.avaje.jdk.realworld.RealworldModule;
   provides io.avaje.jsonb.spi.JsonbExtension with
