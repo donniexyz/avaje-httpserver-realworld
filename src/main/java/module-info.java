@@ -40,11 +40,15 @@ module avaje.realworld {
   requires io.avaje.jex;
   requires io.avaje.jex.staticcontent;
   requires static io.avaje.spi;
+  requires jakarta.inject;
+  requires static lombok;
 
   provides io.avaje.inject.spi.InjectExtension with
       com.avaje.jdk.realworld.RealworldModule;
   provides io.avaje.jsonb.spi.JsonbExtension with
       com.avaje.jdk.realworld.jsonb.GeneratedJsonComponent;
+  provides io.avaje.validation.spi.ValidationExtension with
+      com.avaje.jdk.realworld.models.request.valid.GeneratedValidatorComponent;
   provides io.ebean.config.EntityClassRegister with
       com.avaje.jdk.realworld.models.entities.EbeanEntityRegister;
   provides io.ebean.config.DatabaseConfigProvider with
