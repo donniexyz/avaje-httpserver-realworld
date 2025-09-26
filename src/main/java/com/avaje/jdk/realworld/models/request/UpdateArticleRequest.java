@@ -11,14 +11,14 @@ import java.util.Optional;
 public record UpdateArticleRequest(@NonNull UpdateArticleBody article) {
 
     public boolean anyUpdates() {
-        return article.title.isPresent() || article.description.isPresent() || article.body.isPresent();
+        return article.version.isPresent() && (article.title.isPresent() || article.description.isPresent() || article.body.isPresent());
     }
 
     public record UpdateArticleBody(
-            Optional<String> title, Optional<String> description, Optional<String> body) {
+            Optional<String> title, Optional<String> description, Optional<String> body, Optional<String> version) {
 
         public boolean anyUpdates() {
-            return title.isPresent() || description.isPresent() || body.isPresent();
+            return version().isPresent() && (title.isPresent() || description.isPresent() || body.isPresent());
         }
     }
 }

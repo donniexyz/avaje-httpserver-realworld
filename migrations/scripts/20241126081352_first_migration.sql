@@ -43,7 +43,8 @@ CREATE TABLE realworld.article (
     slug text not null unique,
     title text not null,
     description text not null default '',
-    body text not null default ''
+    body text not null default '',
+    version integer not null
 );
 
 create index on realworld.article using btree(user_id);

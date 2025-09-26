@@ -347,11 +347,13 @@ public class ArticleController {
                 .toString();
     }
 
+    private static final Random random = new Random();
+
     String articleSlug(String title) {
         var sb = new StringBuilder(Slugify.builder().build().slugify(title));
         sb.append("-");
         for (int i = 0; i < 8; i++) {
-            sb.append(new Random().nextInt(10));
+            sb.append(random.nextInt(10));
         }
         return sb.toString();
     }
@@ -367,11 +369,14 @@ public class ArticleController {
                                 String title,
                                 String description,
                                 String body,
+                                Optional<Integer> version,
                                 Optional<List<String>> tagListOp
                         )
                 ))) {
             throw new IllegalArgumentException("body shouldn't be null");
         }
+
+        if (version.isPresent() && version.get() != 0) throw new IllegalArgumentException("version must be empty or 0");
 
         try (var txn = DB.beginTransaction()) {
 
@@ -381,10 +386,10 @@ public class ArticleController {
 
             DB.sqlUpdate(
                             """
-                                    INSERT INTO realworld.article(id, user_id, title, slug, description, body)
-                                    VALUES (?, ?, ?, ?, ?, ?)
+                                    INSERT INTO realworld.article(id, user_id, title, slug, description, body, version)
+                                    VALUES (?, ?, ?, ?, ?, ?, ?)
                                     """)
-                    .setParameters(articleId, userId, title, articleSlug(title), description, body)
+                    .setParameters(articleId, userId, title, articleSlug(title), description, body, 0)
                     .execute();
 
             var tagIds = new ArrayList<UUID>();
@@ -429,6 +434,7 @@ public class ArticleController {
                                                 'title', realworld.article.title,
                                                 'description', realworld.article.description,
                                                 'body', realworld.article.body,
+                                                'version', realworld.article.version,
                                                 'tagList', array(
                                                     SELECT realworld.tag.name
                                                     FROM realworld.article_tag
@@ -486,7 +492,8 @@ public class ArticleController {
                         UpdateArticleBody(
                                 Optional<String> title,
                                 Optional<String> description,
-                                Optional<String> body
+                                Optional<String> body,
+                                Optional<String> version
                         )
                 )) {
             var sets = new ArrayList<SQLFragment>();
@@ -497,6 +504,7 @@ public class ArticleController {
             description.ifPresent(d -> sets.add(SQLFragment.of("description = ?", List.of(d))));
 
             body.ifPresent(b -> sets.add(SQLFragment.of("body = ?", List.of(b))));
+            version.ifPresent(b -> sets.add(SQLFragment.of("version = ?", List.of(b))));
 
             var sql =
                     SQLFragment.of(

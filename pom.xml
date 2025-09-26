@@ -219,6 +219,7 @@
       <plugin>
         <groupId>io.ebean</groupId>
         <artifactId>ebean-maven-plugin</artifactId>
+        <extensions>true</extensions>
         <executions>
           <execution>
             <phase>process-classes</phase>

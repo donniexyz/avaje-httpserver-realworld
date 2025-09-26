@@ -12,6 +12,6 @@ import java.util.Optional;
 @NullMarked
 public record CreateArticleRequest(CreateContent article) {
     public record CreateContent(
-            String title, String description, String body, Optional<List<String>> tagList) {
+            String title, String description, String body, Optional<Integer> version, Optional<List<String>> tagList) {
     }
 }

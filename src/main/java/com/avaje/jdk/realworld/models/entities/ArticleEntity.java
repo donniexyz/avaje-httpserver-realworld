@@ -45,6 +45,10 @@ public class ArticleEntity extends Model {
     @Column(nullable = false)
     private String body;
 
+    // we use @Version, but all DB operations are done via DB.sqlUpdate() hence the validation will be bypassed..
+    @Version
+    Integer version;
+
     public UUID id() {
         return id;
     }
@@ -121,5 +125,13 @@ public class ArticleEntity extends Model {
 
     public void updatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Integer version() {
+        return version;
+    }
+
+    public void version(Integer version) {
+        this.version = version;
     }
 }
