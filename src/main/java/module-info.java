@@ -41,9 +41,10 @@ module avaje.realworld {
   requires io.avaje.jex.staticcontent;
   requires static io.avaje.spi;
   requires jakarta.inject;
-  requires static lombok;
+    requires stormpot;
+    requires lmdbjava;
 
-  exports com.avaje.jdk.realworld.models;
+    exports com.avaje.jdk.realworld.models;
 
   provides io.avaje.inject.spi.InjectExtension with
       com.avaje.jdk.realworld.RealworldModule;
@@ -55,4 +56,6 @@ module avaje.realworld {
       com.avaje.jdk.realworld.models.entities.EbeanEntityRegister;
   provides io.ebean.config.DatabaseConfigProvider with
       com.avaje.jdk.realworld.security.Encryptor;
+
+    requires static lombok;
 }

@@ -66,6 +66,17 @@
     </dependency>
 
     <dependency>
+      <groupId>org.lmdbjava</groupId>
+      <artifactId>lmdbjava</artifactId>
+      <version>0.9.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.chrisvest</groupId>
+      <artifactId>stormpot</artifactId>
+      <version>4.1</version>
+    </dependency>
+
+    <dependency>
       <groupId>io.avaje</groupId>
       <artifactId>avaje-config</artifactId>
     </dependency>
