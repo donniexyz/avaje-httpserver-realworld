@@ -24,7 +24,7 @@ public class ByteBufferObjectFactory extends BasePooledObjectFactory<ByteBuffer>
     @Override
     public ByteBuffer create() throws Exception {
         int cnt = ByteBufferObjectFactory.cnt.incrementAndGet();
-        if (cnt % 100 == 0) log.info("crete: {}", cnt);
+        if (cnt % 1000 == 0) log.info("crete: {}", cnt);
         return ByteBuffer.allocateDirect(maxBufferSize).order(littleEndian ? ByteOrder.LITTLE_ENDIAN : ByteOrder.BIG_ENDIAN);
     }
 
@@ -35,7 +35,6 @@ public class ByteBufferObjectFactory extends BasePooledObjectFactory<ByteBuffer>
 
     @Override
     public void destroyObject(PooledObject<ByteBuffer> p, DestroyMode destroyMode) throws Exception {
-        super.destroyObject(p, destroyMode);
         p.deallocate();
     }
 }

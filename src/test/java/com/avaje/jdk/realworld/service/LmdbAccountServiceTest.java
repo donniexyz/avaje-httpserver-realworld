@@ -16,7 +16,7 @@ class LmdbAccountServiceTest {
   @Test
   void testHighVolumeOfTransactions() {
       final Instant startTime = Instant.now();
-    final int numberOfTransactions = 10_000;
+    final int numberOfTransactions = 30_000;
     final long mapSize = 100 * 1024 * 1024; // 100MB
 
     try (final var service = new LmdbAccountService(mapSize);
