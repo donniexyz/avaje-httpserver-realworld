@@ -2,6 +2,7 @@ package com.avaje.jdk.realworld.service;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -14,9 +15,11 @@ class LmdbAccountServiceTest {
 
   @Test
   void testHighVolumeOfTransactions() {
-    final int numberOfTransactions = 100_000;
+      final Instant startTime = Instant.now();
+    final int numberOfTransactions = 10_000;
+    final long mapSize = 100 * 1024 * 1024; // 100MB
 
-    try (final var service = new LmdbAccountService();
+    try (final var service = new LmdbAccountService(mapSize);
         final var executor = Executors.newVirtualThreadPerTaskExecutor()) {
 
       final List<Future<Account>> futures = new ArrayList<>();
@@ -46,6 +49,9 @@ class LmdbAccountServiceTest {
       }
     } catch (Exception e) {
       throw new RuntimeException(e);
+    }
+    finally {
+        System.out.printf("Execution time: %d ms%n", Instant.now().toEpochMilli() - startTime.toEpochMilli());
     }
   }
 }

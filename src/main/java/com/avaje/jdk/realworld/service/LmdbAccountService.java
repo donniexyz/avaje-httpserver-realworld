@@ -2,6 +2,7 @@ package com.avaje.jdk.realworld.service;
 
 import com.avaje.jdk.realworld.models.flat.Account;
 import com.google.flatbuffers.FlatBufferBuilder;
+import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 import org.lmdbjava.Dbi;
 import org.lmdbjava.Env;
@@ -27,13 +28,21 @@ public class LmdbAccountService implements AutoCloseable {
   private final Dbi<ByteBuffer> dbi;
   private final Path path;
 
+  @Inject
   public LmdbAccountService() {
+      this(10 * 1024 * 1024); // 10 MB
+  }
+
+    /**
+     * Create with a given map size.
+     */
+    public LmdbAccountService(long mapSize) {
     try {
       this.path = Files.createTempDirectory("lmdb-accounts");
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
-    this.env = Env.create().setMapSize(10_485_760).setMaxDbs(1).open(path.toFile());
+    this.env = Env.create().setMapSize(mapSize).setMaxDbs(1).open(path.toFile());
     this.dbi = env.openDbi(DB_NAME, MDB_CREATE);
   }
 
@@ -42,7 +51,7 @@ public class LmdbAccountService implements AutoCloseable {
     final String id = UUID.randomUUID().toString();
     account.setId(id);
 
-    final FlatBufferBuilder builder = new FlatBufferBuilder(1024);
+    final FlatBufferBuilder builder = new FlatBufferBuilder(1024, DirectByteBufferFactory.INSTANCE);
 
     final int email = builder.createString(account.getEmail());
     final int username = builder.createString(account.getUsername());
