@@ -58,4 +58,5 @@ module avaje.realworld {
       com.avaje.jdk.realworld.security.Encryptor;
 
     requires static lombok;
+    requires flatbuffers.java;
 }

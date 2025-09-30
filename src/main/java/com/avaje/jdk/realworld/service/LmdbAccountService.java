@@ -1,80 +1,100 @@
 package com.avaje.jdk.realworld.service;
 
-import com.avaje.jdk.realworld.pool.stormpot.AccountKeyVal;
+import com.avaje.jdk.realworld.models.flat.Account;
+import com.google.flatbuffers.FlatBufferBuilder;
 import jakarta.inject.Singleton;
 import org.lmdbjava.Dbi;
 import org.lmdbjava.Env;
+import org.lmdbjava.Txn;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Comparator;
+import java.util.UUID;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.lmdbjava.DbiFlags.MDB_CREATE;
 
 @Singleton
-public class LmdbAccountService {
+public class LmdbAccountService implements AutoCloseable {
 
-    private static final String DB_NAME = "ACC_BAL";
-    private static final Integer ACC_KEY_SIZE = 256;
-    private static final Integer ACC_VALUE_SIZE = 1024;
+  private static final String DB_NAME = "ACCOUNTS";
 
-    Dbi<ByteBuffer> accBalDbi;
+  private final Env<ByteBuffer> env;
+  private final Dbi<ByteBuffer> dbi;
+  private final Path path;
 
-    public Integer initialize() {
-
-        // We need a storage directory first.
-        // The path cannot be on a remote file system.
-        final File path;
-        try {
-            path = File.createTempFile("$LMDB_MY_DB", ".lmdb.tmp");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        // We always need an Env. An Env owns a physical on-disk storage file. One
-        // Env can store many different databases (ie sorted maps).
-        final Env<ByteBuffer> env =
-                Env.create()
-                        // LMDB also needs to know how large our DB might be. Over-estimating is OK.
-                        .setMapSize(1_048_576)
-                        // LMDB also needs to know how many DBs (Dbi) we want to store in this Env.
-                        .setMaxDbs(1)
-                        // Now let's open the Env. The same path can be concurrently opened and
-                        // used in different processes, but do not open the same path twice in
-                        // the same process at the same time.
-                        .open(path);
-
-        // We need a Dbi for each DB. A Dbi roughly equates to a sorted map. The
-        // MDB_CREATE flag causes the DB to be created if it doesn't already exist.
-        accBalDbi = env.openDbi(DB_NAME, MDB_CREATE);
-
-        return 1;
+  public LmdbAccountService() {
+    try {
+      this.path = Files.createTempDirectory("lmdb-accounts");
+    } catch (IOException e) {
+      throw new RuntimeException(e);
     }
+    this.env = Env.create().setMapSize(10_485_760).setMaxDbs(1).open(path.toFile());
+    this.dbi = env.openDbi(DB_NAME, MDB_CREATE);
+  }
 
-    public boolean demo() {
-        // We want to store some data, so we will need a direct ByteBuffer.
-        // Note that LMDB keys cannot exceed maxKeySize bytes (511 bytes by default).
-        // Values can be larger.
+  public com.avaje.jdk.realworld.service.Account save(
+      com.avaje.jdk.realworld.service.Account account) {
+    final String id = UUID.randomUUID().toString();
+    account.setId(id);
 
-        Boolean result = AccountKeyVal.DEFAULT.whenKeyValue(
-                (keyBufer, valueBuffer) -> {
-                    keyBufer.put("greeting".getBytes(UTF_8)).flip();
-                    valueBuffer.put("Hello world".getBytes(UTF_8)).flip();
+    final FlatBufferBuilder builder = new FlatBufferBuilder(1024);
 
-                    final int valSize = valueBuffer.remaining();
+    final int email = builder.createString(account.getEmail());
+    final int username = builder.createString(account.getUsername());
+    final int password = builder.createString(account.getPassword());
+    final int bio = builder.createString(account.getBio());
+    final int image = builder.createString(account.getImage());
+    final int idOffset = builder.createString(id);
 
-                    // Now store it. Dbi.put() internally begins and commits a transaction (Txn).
-                    accBalDbi.put(keyBufer, valueBuffer);
+    Account.startAccount(builder);
+    Account.addId(builder, idOffset);
+    Account.addEmail(builder, email);
+    Account.addUsername(builder, username);
+    Account.addPassword(builder, password);
+    Account.addBio(builder, bio);
+    Account.addImage(builder, image);
+    final int accountOffset = Account.endAccount(builder);
 
-                    return true;
-                },
-                (throwables) -> {
-                    return false;
-                }
-        );
-        return result;
+    builder.finish(accountOffset);
 
+    final ByteBuffer value = builder.dataBuffer();
+
+    final ByteBuffer key = ByteBuffer.allocateDirect(env.getMaxKeySize());
+    key.put(id.getBytes(UTF_8)).flip();
+
+    dbi.put(key, value);
+    return account;
+  }
+
+  public com.avaje.jdk.realworld.service.Account findById(String id) {
+    final ByteBuffer key = ByteBuffer.allocateDirect(env.getMaxKeySize());
+    key.put(id.getBytes(UTF_8)).flip();
+
+    try (Txn<ByteBuffer> txn = env.txnRead()) {
+      final ByteBuffer foundValue = dbi.get(txn, key);
+      if (foundValue == null) {
+        return null;
+      }
+
+      final Account flatAccount = Account.getRootAsAccount(foundValue);
+      return new com.avaje.jdk.realworld.service.Account(
+          flatAccount.email(),
+          flatAccount.username(),
+          flatAccount.password(),
+          flatAccount.bio(),
+          flatAccount.image(),
+          flatAccount.id());
     }
+  }
 
+  @Override
+  public void close() throws Exception {
+    env.close();
+    Files.walk(path).sorted(Comparator.reverseOrder()).map(Path::toFile).forEach(File::delete);
+  }
 }
