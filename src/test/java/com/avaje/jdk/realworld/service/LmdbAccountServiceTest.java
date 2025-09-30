@@ -47,8 +47,10 @@ class LmdbAccountServiceTest {
           throw new RuntimeException(e);
         }
       }
+        System.out.printf("Success");
     } catch (Exception e) {
-      throw new RuntimeException(e);
+        System.out.printf("Failed");
+        throw new RuntimeException(e);
     }
     finally {
         System.out.printf("Execution time: %d ms%n", Instant.now().toEpochMilli() - startTime.toEpochMilli());

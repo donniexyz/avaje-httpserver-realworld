@@ -51,7 +51,10 @@ public class LmdbAccountService implements AutoCloseable {
     final String id = UUID.randomUUID().toString();
     account.setId(id);
 
-    final FlatBufferBuilder builder = new FlatBufferBuilder(1024, DirectByteBufferFactory.INSTANCE);
+//    final FlatBufferBuilder builder = new FlatBufferBuilder(1024, DirectByteBufferFactory.INSTANCE);
+    // Execution time: 16551 ms
+
+    final FlatBufferBuilder builder = new FlatBufferBuilder(1024, new DirectByteBufferPooledFactory( 1024, 10));
 
     final int email = builder.createString(account.getEmail());
     final int username = builder.createString(account.getUsername());

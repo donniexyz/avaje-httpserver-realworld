@@ -59,4 +59,5 @@ module avaje.realworld {
 
     requires static lombok;
     requires flatbuffers.java;
+    requires org.apache.commons.pool2;
 }
