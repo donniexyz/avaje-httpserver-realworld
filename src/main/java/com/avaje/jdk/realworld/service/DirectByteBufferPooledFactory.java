@@ -1,9 +1,7 @@
 package com.avaje.jdk.realworld.service;
 
 import com.google.flatbuffers.FlatBufferBuilder;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
@@ -15,29 +13,31 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Slf4j
 public class DirectByteBufferPooledFactory extends FlatBufferBuilder.ByteBufferFactory {
 
-    private int maxBufferSize = 4 * 1024;
+    private final int bufferSize;
 
-    private int timeoutMillis = 1000;
+    private final int timeoutMillis;
 
-    public static final DirectByteBufferPooledFactory DEFAULT_INSTANCE = new DirectByteBufferPooledFactory();
+    public static final DirectByteBufferPooledFactory DEFAULT_INSTANCE = new DirectByteBufferPooledFactory(4 * 1024, 1000);
 
+    @Getter
     private final GenericObjectPool<ByteBuffer> bufferPool;
 
     public DirectByteBufferPooledFactory() {
         GenericObjectPoolConfig<ByteBuffer> DEFAULT_POOL_CONFIG = getPoolConfig();
 
         bufferPool = new GenericObjectPool<ByteBuffer>(
-                new ByteBufferObjectFactory(maxBufferSize, true),
+                new ByteBufferObjectFactory(4 * 1024, true),
                 DEFAULT_POOL_CONFIG);
+        this.bufferSize = 4 * 1024;
+        this.timeoutMillis = 1000;
     }
 
-    public DirectByteBufferPooledFactory(int maxBufferSize, int timeoutMillis) {
+    public DirectByteBufferPooledFactory(int bufferSize, int timeoutMillis) {
         GenericObjectPoolConfig<ByteBuffer> DEFAULT_POOL_CONFIG = getPoolConfig();
-
-        this.maxBufferSize = maxBufferSize;
+        this.bufferSize = bufferSize;
         this.timeoutMillis = timeoutMillis;
         bufferPool = new GenericObjectPool<ByteBuffer>(
-                new ByteBufferObjectFactory(maxBufferSize, true),
+                new ByteBufferObjectFactory(bufferSize, true),
                 DEFAULT_POOL_CONFIG);
         try {
             bufferPool.preparePool();
@@ -49,7 +49,7 @@ public class DirectByteBufferPooledFactory extends FlatBufferBuilder.ByteBufferF
     @Override
     public ByteBuffer newByteBuffer(int capacity) {
         try {
-            if (capacity > maxBufferSize) log.warn("capacity req exceed MAX: {}", capacity);
+            if (capacity > bufferSize) log.warn("capacity req exceed MAX: {}", capacity);
             return bufferPool.borrowObject(timeoutMillis);
         } catch (Exception e) {
             log.error("newByteBuffer exception", e);

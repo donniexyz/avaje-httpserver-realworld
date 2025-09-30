@@ -30,7 +30,7 @@ public class LmdbAccountService implements AutoCloseable {
     private final Dbi<ByteBuffer> dbi;
     private final Path path;
 
-    FlatBufferBuilder.ByteBufferFactory bbFactory;
+    DirectByteBufferPooledFactory bbFactory;
 
     @Inject
     public LmdbAccountService() {
@@ -51,6 +51,8 @@ public class LmdbAccountService implements AutoCloseable {
         this.bbFactory = new DirectByteBufferPooledFactory(1024, 10);
 // pooled      10k - SuccessExecution time: 11281 ms
 // pooled      30k - SuccessExecution time: 24677 ms
+// pooled - borrow-return 30k - Success11:00:44.520 [main] INFO com.avaje.jdk.realworld.service.LmdbAccountService - bbFactory Relcnt: 30000
+//        Execution time: 24762 ms
 
 //        this.bbFactory = DirectByteBufferFactory.INSTANCE;
         //    final FlatBufferBuilder builder = new FlatBufferBuilder(1024, DirectByteBufferFactory.INSTANCE);
@@ -63,33 +65,34 @@ public class LmdbAccountService implements AutoCloseable {
         final String id = UUID.randomUUID().toString();
         account.setId(id);
 
-        final FlatBufferBuilder builder = new FlatBufferBuilder(1024, bbFactory);
+        try (ClosableFlatBufferBuilder builder = new ClosableFlatBufferBuilder.Unsafe(1024, bbFactory)) {
 
-        final int email = builder.createString(account.getEmail());
-        final int username = builder.createString(account.getUsername());
-        final int password = builder.createString(account.getPassword());
-        final int bio = builder.createString(account.getBio());
-        final int image = builder.createString(account.getImage());
-        final int idOffset = builder.createString(id);
+            final int email = builder.createString(account.getEmail());
+            final int username = builder.createString(account.getUsername());
+            final int password = builder.createString(account.getPassword());
+            final int bio = builder.createString(account.getBio());
+            final int image = builder.createString(account.getImage());
+            final int idOffset = builder.createString(id);
 
-        Account.startAccount(builder);
-        Account.addId(builder, idOffset);
-        Account.addEmail(builder, email);
-        Account.addUsername(builder, username);
-        Account.addPassword(builder, password);
-        Account.addBio(builder, bio);
-        Account.addImage(builder, image);
-        final int accountOffset = Account.endAccount(builder);
+            Account.startAccount(builder);
+            Account.addId(builder, idOffset);
+            Account.addEmail(builder, email);
+            Account.addUsername(builder, username);
+            Account.addPassword(builder, password);
+            Account.addBio(builder, bio);
+            Account.addImage(builder, image);
+            final int accountOffset = Account.endAccount(builder);
 
-        builder.finish(accountOffset);
+            builder.finish(accountOffset);
 
-        final ByteBuffer value = builder.dataBuffer();
+            final ByteBuffer value = builder.dataBuffer();
 
-        final ByteBuffer key = ByteBuffer.allocateDirect(env.getMaxKeySize());
-        key.put(id.getBytes(UTF_8)).flip();
+            final ByteBuffer key = ByteBuffer.allocateDirect(env.getMaxKeySize());
+            key.put(id.getBytes(UTF_8)).flip();
 
-        dbi.put(key, value);
-        return account;
+            dbi.put(key, value);
+            return account;
+        }
     }
 
     public com.avaje.jdk.realworld.service.Account findById(String id) {
@@ -115,8 +118,11 @@ public class LmdbAccountService implements AutoCloseable {
 
     @Override
     public void close() throws Exception {
-        if (bbFactory instanceof DirectByteBufferPooledFactory asBb)
+        if (bbFactory instanceof DirectByteBufferPooledFactory asBb) {
             log.info("bbFactory Relcnt: {}", asBb.getRelcnt().get());
+            log.info("bbFactory getBufferPool: {}", asBb.getBufferPool());
+            asBb.getBufferPool().close();
+        }
         env.close();
         Files.walk(path).sorted(Comparator.reverseOrder()).map(Path::toFile).forEach(File::delete);
     }
