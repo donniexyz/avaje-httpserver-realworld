@@ -1,10 +1,12 @@
 package com.avaje.jdk.realworld.service;
 
 import com.google.flatbuffers.FlatBufferBuilder;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.Closeable;
 import java.nio.ByteBuffer;
 
+@Slf4j
 public class ClosableFlatBufferBuilder extends FlatBufferBuilder implements Closeable {
 
     private final DirectByteBufferPooledFactory bb_factory;

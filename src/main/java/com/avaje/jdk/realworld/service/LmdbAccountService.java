@@ -23,6 +23,7 @@ import static org.lmdbjava.DbiFlags.MDB_CREATE;
 public class LmdbAccountService implements AutoCloseable {
 
     private static final String DB_NAME = "ACCOUNTS";
+    private static final int BUFFER_SIZE = 1024;
 
     private final Env<ByteBuffer> env;
     private final Dbi<ByteBuffer> dbi;
@@ -53,11 +54,12 @@ public class LmdbAccountService implements AutoCloseable {
         }
         this.env = Env.create().setMapSize(mapSize).setMaxDbs(1).open(path.toFile());
         this.dbi = env.openDbi(DB_NAME, MDB_CREATE);
-        this.bbFactory = new DirectByteBufferPooledFactory(1024, 10);
+        this.bbFactory = new DirectByteBufferPooledFactory(BUFFER_SIZE, 10);
 // pooled      10k - SuccessExecution time: 11281 ms
 // pooled      30k - SuccessExecution time: 24677 ms
 // pooled - borrow-return 30k - Success11:00:44.520 [main] INFO com.avaje.jdk.realworld.service.LmdbAccountService - bbFactory Relcnt: 30000
 //        Execution time: 24762 ms
+// pooled - borrow-return 30k - key pooled - Execution time: 21745 ms
 
 //        this.bbFactory = DirectByteBufferFactory.INSTANCE;
         //    final FlatBufferBuilder builder = new FlatBufferBuilder(1024, DirectByteBufferFactory.INSTANCE);
@@ -70,7 +72,7 @@ public class LmdbAccountService implements AutoCloseable {
         final String generatedId = UUID.randomUUID().toString();
         accountDTO.setId(generatedId);
 
-        try (ClosableFlatBufferBuilder builder = new ClosableFlatBufferBuilder(1024, bbFactory)) {
+        try (ClosableFlatBufferBuilder builder = new ClosableFlatBufferBuilder(BUFFER_SIZE, bbFactory)) {
 
             final int emailOffset = builder.createString(accountDTO.getEmail());
             final int usernameOffset = builder.createString(accountDTO.getUsername());

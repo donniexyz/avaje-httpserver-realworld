@@ -17,7 +17,7 @@ public class DirectByteBufferPooledFactory extends FlatBufferBuilder.ByteBufferF
 
     private final int timeoutMillis;
 
-    public static final DirectByteBufferPooledFactory DEFAULT_INSTANCE = new DirectByteBufferPooledFactory(4 * 1024, 1000);
+    public static final DirectByteBufferPooledFactory DEFAULT_INSTANCE = new DirectByteBufferPooledFactory(4 * 1024, 10);
 
     @Getter
     private final GenericObjectPool<ByteBuffer> bufferPool;
@@ -49,7 +49,7 @@ public class DirectByteBufferPooledFactory extends FlatBufferBuilder.ByteBufferF
     @Override
     public ByteBuffer newByteBuffer(int capacity) {
         try {
-            if (capacity > bufferSize) log.warn("capacity req exceed MAX: {}", capacity);
+            if (capacity > bufferSize) throw new IllegalArgumentException("capacity req exceed MAX: " + capacity);
             return bufferPool.borrowObject(timeoutMillis);
         } catch (Exception e) {
             log.error("newByteBuffer exception", e);
