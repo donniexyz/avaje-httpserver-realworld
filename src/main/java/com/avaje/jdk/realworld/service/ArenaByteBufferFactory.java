@@ -75,6 +75,21 @@ public final class ArenaByteBufferFactory extends FlatBufferBuilder.ByteBufferFa
     addNewArena(initialCapacity);
   }
 
+  /**
+   * Borrows a ByteBuffer from the pool and wraps it in a {@link ManagedByteBuffer}
+   * for use with try-with-resources.
+   *
+   * @param capacity The required capacity, must be <= sliceCapacity.
+   * @return A closable wrapper around the pooled ByteBuffer.
+   */
+  public ManagedByteBuffer borrow(int capacity) {
+    final ByteBuffer buffer = newByteBuffer(capacity);
+    if (buffer == null) {
+      throw new RuntimeException("Could not borrow a ByteBuffer from the arena. Pool is empty and growth is disabled or max capacity reached.");
+    }
+    return new ManagedByteBuffer(buffer, this);
+  }
+
   @Override
   public ByteBuffer newByteBuffer(int capacity) {
     // This factory only supports a fixed capacity
