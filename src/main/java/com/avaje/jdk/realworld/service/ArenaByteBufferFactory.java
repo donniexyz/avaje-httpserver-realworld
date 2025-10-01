@@ -5,6 +5,7 @@ import com.google.flatbuffers.FlatBufferBuilder;
 import lombok.extern.slf4j.Slf4j;
 
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -140,7 +141,7 @@ public final class ArenaByteBufferFactory extends FlatBufferBuilder.ByteBufferFa
           .position(position)
           .limit(position + sliceCapacity)
           .slice();
-      pool.add(slice);
+      pool.add(slice.order(ByteOrder.LITTLE_ENDIAN));
     }
     log.info("Arena grown. Added {} new slices. Pool size: {}, Total capacity: {} bytes", numSlices, pool.size(), currentTotalCapacity.get());
   }
