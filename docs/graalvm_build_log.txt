@@ -1,0 +1,306 @@
+D:\software\ideaIC-2025.2.1.win\plugins\maven\lib\maven3\bin\mvn.cmd -Didea.version=2025.2.1 -Dmaven.ext.class.path=D:\software\ideaIC-2025.2.1.win\plugins\maven\lib\maven-event-listener.jar -Djansi.passthrough=true -Dstyle.color=always -s C:\Users\dony\.m2\settings_lcl.xml -Dmaven.repo.local=C:\Users\dony\.m2\repository package -Pnative -f pom.xml
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.fusesource.jansi.internal.JansiLoader in an unnamed module (file:/D:/software/ideaIC-2025.2.1.win/plugins/maven/lib/maven3/lib/jansi-2.4.1.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/D:/software/ideaIC-2025.2.1.win/plugins/maven/lib/maven3/lib/guava-33.2.1-jre.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/native-maven-plugin/0.10.2/native-maven-plugin-0.10.2.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/native-maven-plugin/0.10.2/native-maven-plugin-0.10.2.pom (2.8 kB at 2.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/utils/0.10.2/utils-0.10.2.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/utils/0.10.2/utils-0.10.2.pom (1.9 kB at 33 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/graalvm-reachability-metadata/0.10.2/graalvm-reachability-metadata-0.10.2.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/graalvm-reachability-metadata/0.10.2/graalvm-reachability-metadata-0.10.2.pom (2.0 kB at 38 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/native-maven-plugin/0.10.2/native-maven-plugin-0.10.2.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/native-maven-plugin/0.10.2/native-maven-plugin-0.10.2.jar (86 kB at 710 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/utils/0.10.2/utils-0.10.2.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/graalvm-reachability-metadata/0.10.2/graalvm-reachability-metadata-0.10.2.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/utils/0.10.2/utils-0.10.2.jar (30 kB at 405 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/graalvm-reachability-metadata/0.10.2/graalvm-reachability-metadata-0.10.2.jar (26 kB at 118 kB/s)
+[INFO] 
+[INFO] -------------------< com.avaje:avaje-jex-realworld >--------------------
+[INFO] Building avaje-jex-realworld 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/maven-metadata.xml
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/maven-metadata.xml (1.6 kB at 36 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/3.6.1/maven-shade-plugin-3.6.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/3.6.1/maven-shade-plugin-3.6.1.pom (12 kB at 191 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/45/maven-plugins-45.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/45/maven-plugins-45.pom (8.4 kB at 149 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/45/maven-parent-45.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/45/maven-parent-45.pom (53 kB at 778 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.13.1/junit-bom-5.13.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.13.1/junit-bom-5.13.1.pom (5.6 kB at 131 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/3.6.1/maven-shade-plugin-3.6.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/3.6.1/maven-shade-plugin-3.6.1.jar (150 kB at 1.4 MB/s)
+[INFO] 
+[INFO] --- fmt:2.27:format (default) @ avaje-jex-realworld ---
+[info] Processed 31 files (29 reformatted).
+[INFO] 
+[INFO] --- provides:11.6:provides (default) @ avaje-jex-realworld ---
+[INFO] Loaded Plugin: class io.avaje.http.inject.DefaultResolverProvider
+[INFO] Loaded Plugin: class io.avaje.jsonb.inject.DefaultJsonbProvider
+[INFO] Loaded Plugin: class io.avaje.validation.inject.spi.DefaultValidatorProvider
+[INFO] Loaded Plugin: class io.avaje.validation.http.HttpValidatorProvider
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ avaje-jex-realworld ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- avaje-provides:2.3:disable-apt-validation (default) @ avaje-jex-realworld ---
+[INFO] disabling avaje module verification
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ avaje-jex-realworld ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 30 source files with javac [debug release 24 module-path] to target\classes
+[INFO] Ebean APT generated 7 query beans, loaded 0 others - META-INF/ebean-generated-info.mf entity-packages: [com.avaje.jdk.realworld.models.entities, com.avaje.jdk.realworld.models.entities.ArticleTags]
+[INFO] Loaded Plugin: io.avaje.validation.inject.spi.DefaultValidatorProvider
+[INFO] Loaded Plugin: io.avaje.jsonb.inject.DefaultJsonbProvider
+[INFO] Loaded Plugin: io.avaje.http.inject.DefaultResolverProvider
+[INFO] Loaded Plugin: io.avaje.inject.events.spi.ObserverManagerPlugin
+[INFO] Loaded Plugin: io.avaje.validation.http.HttpValidatorProvider
+[INFO] No external modules detected
+[INFO] Writing META-INF/services/io.ebean.config.DatabaseConfigProvider
+[WARNING] File for type 'com.avaje.jdk.realworld.jsonb.GeneratedJsonComponent' created in the last round will not be subject to annotation processing.
+[WARNING] File for type 'com.avaje.jdk.realworld.models.request.valid.GeneratedValidatorComponent' created in the last round will not be subject to annotation processing.
+[INFO] 
+[INFO] --- avaje-provides:2.3:add-module-spi (default) @ avaje-jex-realworld ---
+[INFO] Adding `provides JsonbExtension with GeneratedJsonComponent;` to compiled module-info.class
+[INFO] Adding `provides LookupProvider with EbeanMethodLookup;` to compiled module-info.class
+[INFO] Adding `provides DatabaseConfigProvider with Encryptor;` to compiled module-info.class
+[INFO] Adding `provides ValidationExtension with GeneratedValidatorComponent;` to compiled module-info.class
+[INFO] Adding `provides EntityClassRegister with EbeanEntityRegister;` to compiled module-info.class
+[INFO] Adding `provides InjectExtension with RealworldModule;` to compiled module-info.class
+[INFO] 
+[INFO] --- enhance:15.11.0:enhance (default) @ avaje-jex-realworld ---
+Downloading from central: https://repo.maven.apache.org/maven2/io/ebean/ebean-agent/15.11.0/ebean-agent-15.11.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/io/ebean/ebean-agent/15.11.0/ebean-agent-15.11.0.jar (338 kB at 714 kB/s)
+ebean-agent version:15.11.0 enhancement:149 resources:[META-INF/ebean-version.mf, META-INF/ebean-generated-info.mf]
+[INFO] classSource=D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes  transformArgs=debug=1
+[INFO] packages entity:[com.avaje.jdk.realworld.models.entities.ArticleTags, com.avaje.jdk.realworld.models.entities]  transactional:[]  querybean:[]  profileLocation:true  version:149
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\ArticleEntity.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\ArticleTags$ArticleTagId.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\ArticleTags.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\CommentEntity.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\FavoriteEntity.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QArticleEntity$Alias.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QArticleEntity$Assoc.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QArticleEntity$AssocMany.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QArticleEntity$AssocOne.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QArticleEntity.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QArticleTags$Alias.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QArticleTags$ArticleTagId$Assoc.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QArticleTags$Assoc.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QArticleTags$AssocMany.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QArticleTags$AssocOne.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QArticleTags.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QCommentEntity$Alias.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QCommentEntity$Assoc.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QCommentEntity$AssocMany.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QCommentEntity$AssocOne.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QCommentEntity.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QFavoriteEntity$Alias.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QFavoriteEntity$Assoc.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QFavoriteEntity$AssocMany.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QFavoriteEntity$AssocOne.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QFavoriteEntity.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QTagEntity$Alias.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QTagEntity$Assoc.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QTagEntity$AssocMany.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QTagEntity$AssocOne.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QTagEntity.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QUserEntity$Alias.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QUserEntity$Assoc.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QUserEntity$AssocMany.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QUserEntity$AssocOne.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\query\QUserEntity.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\TagEntity.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\models\entities\UserEntity.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\web\ProfilesController.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\web\service\TokenService.class
+[INFO] Enhanced D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\classes\com\avaje\jdk\realworld\web\UserController.class
+[INFO] loaded resources: [META-INF/ebean-version.mf, META-INF/ebean-generated-info.mf]
+[INFO]      Entities (7)  pkgs[com/avaje/jdk/realworld/models/entities] beans[ArticleEntity, ArticleTags, ArticleTags$ArticleTagId, CommentEntity, FavoriteEntity, TagEntity, UserEntity]
+[INFO]    QueryBeans (6)  pkgs[com/avaje/jdk/realworld/models/entities/query] beans[QArticleEntity, QArticleTags, QCommentEntity, QFavoriteEntity, QTagEntity, QUserEntity]
+[INFO] Transactional (1)  pkgs[com/avaje/jdk/realworld/web] beans[ProfilesController]
+[INFO] Query Callers (2)  pkgs[com/avaje/jdk/realworld/web] beans[UserController, service/TokenService]
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ avaje-jex-realworld ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ avaje-jex-realworld ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug release 24 module-path] to target\test-classes
+[INFO] No service definition file found
+[INFO] 
+[INFO] --- enhance:15.11.0:testEnhance (default) @ avaje-jex-realworld ---
+ebean-agent version:15.11.0 enhancement:149 resources:[META-INF/ebean-version.mf, META-INF/ebean-generated-info.mf]
+[INFO] classSource=D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\test-classes  transformArgs=debug=1
+[INFO] packages entity:[com.avaje.jdk.realworld.models.entities.ArticleTags, com.avaje.jdk.realworld.models.entities]  transactional:[]  querybean:[]  profileLocation:true  version:149
+[INFO] loaded resources: [META-INF/ebean-version.mf, META-INF/ebean-generated-info.mf]
+[INFO]      Entities (0)  pkgs[] beans[]
+[INFO]    QueryBeans (0)  pkgs[] beans[]
+[INFO] Transactional (0)  pkgs[] beans[]
+[INFO] Query Callers (0)  pkgs[] beans[]
+[INFO] 
+[INFO] --- surefire:3.5.3:test (default-test) @ avaje-jex-realworld ---
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.avaje.jdk.realworld.security.AuthFilterTest
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+02:39:22.218 [main] INFO io.avaje.config - Loaded properties from [resource:application.properties, resource:application-test.properties] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.722 s -- in com.avaje.jdk.realworld.security.AuthFilterTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ avaje-jex-realworld ---
+[INFO] Building jar: D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-jex-realworld-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- dependency:3.7.0:copy-dependencies (copy-modules) @ avaje-jex-realworld ---
+[INFO] Copying artifact 'com.auth0:java-jwt:jar:4.5.0:compile' (C:\Users\dony\.m2\repository\com\auth0\java-jwt\4.5.0\java-jwt-4.5.0.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\java-jwt-4.5.0.jar
+[INFO] Copying artifact 'com.fasterxml.jackson.core:jackson-core:jar:2.15.4:compile' (C:\Users\dony\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.4\jackson-core-2.15.4.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\jackson-core-2.15.4.jar
+[INFO] Copying artifact 'com.fasterxml.jackson.core:jackson-databind:jar:2.15.4:compile' (C:\Users\dony\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.4\jackson-databind-2.15.4.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\jackson-databind-2.15.4.jar
+[INFO] Copying artifact 'com.fasterxml.jackson.core:jackson-annotations:jar:2.15.4:compile' (C:\Users\dony\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.4\jackson-annotations-2.15.4.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\jackson-annotations-2.15.4.jar
+[INFO] Copying artifact 'io.ebean:ebean-postgres:jar:15.11.0:compile' (C:\Users\dony\.m2\repository\io\ebean\ebean-postgres\15.11.0\ebean-postgres-15.11.0.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\ebean-postgres-15.11.0.jar
+[INFO] Copying artifact 'io.ebean:ebean-api:jar:15.11.0:compile' (C:\Users\dony\.m2\repository\io\ebean\ebean-api\15.11.0\ebean-api-15.11.0.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\ebean-api-15.11.0.jar
+[INFO] Copying artifact 'io.avaje:avaje-applog-slf4j:jar:1.0:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-applog-slf4j\1.0\avaje-applog-slf4j-1.0.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-applog-slf4j-1.0.jar
+[INFO] Copying artifact 'io.ebean:jakarta-persistence-api:jar:3.0:compile' (C:\Users\dony\.m2\repository\io\ebean\jakarta-persistence-api\3.0\jakarta-persistence-api-3.0.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\jakarta-persistence-api-3.0.jar
+[INFO] Copying artifact 'io.ebean:ebean-annotation:jar:8.4:compile' (C:\Users\dony\.m2\repository\io\ebean\ebean-annotation\8.4\ebean-annotation-8.4.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\ebean-annotation-8.4.jar
+[INFO] Copying artifact 'io.ebean:ebean-types:jar:3.0:compile' (C:\Users\dony\.m2\repository\io\ebean\ebean-types\3.0\ebean-types-3.0.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\ebean-types-3.0.jar
+[INFO] Copying artifact 'io.ebean:ebean-datasource-api:jar:9.3:compile' (C:\Users\dony\.m2\repository\io\ebean\ebean-datasource-api\9.3\ebean-datasource-api-9.3.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\ebean-datasource-api-9.3.jar
+[INFO] Copying artifact 'io.ebean:ebean-core:jar:15.11.0:compile' (C:\Users\dony\.m2\repository\io\ebean\ebean-core\15.11.0\ebean-core-15.11.0.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\ebean-core-15.11.0.jar
+[INFO] Copying artifact 'io.ebean:ebean-ddl-runner:jar:2.3:compile' (C:\Users\dony\.m2\repository\io\ebean\ebean-ddl-runner\2.3\ebean-ddl-runner-2.3.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\ebean-ddl-runner-2.3.jar
+[INFO] Copying artifact 'io.avaje:classpath-scanner:jar:7.1:compile' (C:\Users\dony\.m2\repository\io\avaje\classpath-scanner\7.1\classpath-scanner-7.1.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\classpath-scanner-7.1.jar
+[INFO] Copying artifact 'io.avaje:classpath-scanner-api:jar:7.1:compile' (C:\Users\dony\.m2\repository\io\avaje\classpath-scanner-api\7.1\classpath-scanner-api-7.1.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\classpath-scanner-api-7.1.jar
+[INFO] Copying artifact 'io.ebean:ebean-migration-auto:jar:1.2:compile' (C:\Users\dony\.m2\repository\io\ebean\ebean-migration-auto\1.2\ebean-migration-auto-1.2.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\ebean-migration-auto-1.2.jar
+[INFO] Copying artifact 'io.ebean:ebean-core-type:jar:15.11.0:compile' (C:\Users\dony\.m2\repository\io\ebean\ebean-core-type\15.11.0\ebean-core-type-15.11.0.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\ebean-core-type-15.11.0.jar
+[INFO] Copying artifact 'io.ebean:ebean-datasource:jar:9.3:compile' (C:\Users\dony\.m2\repository\io\ebean\ebean-datasource\9.3\ebean-datasource-9.3.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\ebean-datasource-9.3.jar
+[INFO] Copying artifact 'io.ebean:ebean-migration:jar:14.2.0:compile' (C:\Users\dony\.m2\repository\io\ebean\ebean-migration\14.2.0\ebean-migration-14.2.0.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\ebean-migration-14.2.0.jar
+[INFO] Copying artifact 'io.ebean:ebean-querybean:jar:15.11.0:compile' (C:\Users\dony\.m2\repository\io\ebean\ebean-querybean\15.11.0\ebean-querybean-15.11.0.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\ebean-querybean-15.11.0.jar
+[INFO] Copying artifact 'io.ebean:ebean-platform-postgres:jar:15.11.0:compile' (C:\Users\dony\.m2\repository\io\ebean\ebean-platform-postgres\15.11.0\ebean-platform-postgres-15.11.0.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\ebean-platform-postgres-15.11.0.jar
+[INFO] Copying artifact 'io.jstach.rainbowgum:rainbowgum-slf4j:jar:0.8.2:compile' (C:\Users\dony\.m2\repository\io\jstach\rainbowgum\rainbowgum-slf4j\0.8.2\rainbowgum-slf4j-0.8.2.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\rainbowgum-slf4j-0.8.2.jar
+[INFO] Copying artifact 'org.slf4j:slf4j-api:jar:2.0.17:compile' (C:\Users\dony\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\slf4j-api-2.0.17.jar
+[INFO] Copying artifact 'io.jstach.rainbowgum:rainbowgum-core:jar:0.8.2:compile' (C:\Users\dony\.m2\repository\io\jstach\rainbowgum\rainbowgum-core\0.8.2\rainbowgum-core-0.8.2.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\rainbowgum-core-0.8.2.jar
+[INFO] Copying artifact 'io.jstach.rainbowgum:rainbowgum-annotation:jar:0.8.2:compile' (C:\Users\dony\.m2\repository\io\jstach\rainbowgum\rainbowgum-annotation\0.8.2\rainbowgum-annotation-0.8.2.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\rainbowgum-annotation-0.8.2.jar
+[INFO] Copying artifact 'dev.mccue:jdbc:jar:2025.05.29:compile' (C:\Users\dony\.m2\repository\dev\mccue\jdbc\2025.05.29\jdbc-2025.05.29.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\jdbc-2025.05.29.jar
+[INFO] Copying artifact 'org.jetbrains:annotations:jar:24.1.0:compile' (C:\Users\dony\.m2\repository\org\jetbrains\annotations\24.1.0\annotations-24.1.0.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\annotations-24.1.0.jar
+[INFO] Copying artifact 'com.github.slugify:slugify:jar:3.0.7:compile' (C:\Users\dony\.m2\repository\com\github\slugify\slugify\3.0.7\slugify-3.0.7.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\slugify-3.0.7.jar
+[INFO] Copying artifact 'org.postgresql:postgresql:jar:42.7.7:compile' (C:\Users\dony\.m2\repository\org\postgresql\postgresql\42.7.7\postgresql-42.7.7.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\postgresql-42.7.7.jar
+[INFO] Copying artifact 'org.checkerframework:checker-qual:jar:3.49.3:runtime' (C:\Users\dony\.m2\repository\org\checkerframework\checker-qual\3.49.3\checker-qual-3.49.3.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\checker-qual-3.49.3.jar
+[INFO] Copying artifact 'io.avaje:avaje-config:jar:4.2-RC1:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-config\4.2-RC1\avaje-config-4.2-RC1.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-config-4.2-RC1.jar
+[INFO] Copying artifact 'org.jspecify:jspecify:jar:1.0.0:compile' (C:\Users\dony\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\jspecify-1.0.0.jar
+[INFO] Copying artifact 'io.avaje:avaje-applog:jar:1.2:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-applog\1.2\avaje-applog-1.2.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-applog-1.2.jar
+[INFO] Copying artifact 'io.avaje:avaje-jex:jar:3.3-RC4:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-jex\3.3-RC4\avaje-jex-3.3-RC4.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-jex-3.3-RC4.jar
+[INFO] Copying artifact 'io.avaje:avaje-jex-static-content:jar:3.3-RC4:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-jex-static-content\3.3-RC4\avaje-jex-static-content-3.3-RC4.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-jex-static-content-3.3-RC4.jar
+[INFO] Copying artifact 'io.avaje:avaje-http-api:jar:3.4:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-http-api\3.4\avaje-http-api-3.4.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-http-api-3.4.jar
+[INFO] Copying artifact 'io.avaje:avaje-http-inject-plugin:jar:3.4:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-http-inject-plugin\3.4\avaje-http-inject-plugin-3.4.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-http-inject-plugin-3.4.jar
+[INFO] Copying artifact 'io.avaje:avaje-inject:jar:11.6:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-inject\11.6\avaje-inject-11.6.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-inject-11.6.jar
+[INFO] Copying artifact 'jakarta.inject:jakarta.inject-api:jar:2.0.1:compile' (C:\Users\dony\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\jakarta.inject-api-2.0.1.jar
+[INFO] Copying artifact 'io.avaje:avaje-inject-aop:jar:11.6:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-inject-aop\11.6\avaje-inject-aop-11.6.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-inject-aop-11.6.jar
+[INFO] Copying artifact 'io.avaje:avaje-inject-events:jar:11.6:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-inject-events\11.6\avaje-inject-events-11.6.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-inject-events-11.6.jar
+[INFO] Copying artifact 'io.avaje:avaje-jsonb:jar:3.7-RC2:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-jsonb\3.7-RC2\avaje-jsonb-3.7-RC2.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-jsonb-3.7-RC2.jar
+[INFO] Copying artifact 'io.avaje:avaje-json-core:jar:3.7-RC2:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-json-core\3.7-RC2\avaje-json-core-3.7-RC2.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-json-core-3.7-RC2.jar
+[INFO] Copying artifact 'io.avaje:avaje-jsonb-inject-plugin:jar:3.7-RC2:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-jsonb-inject-plugin\3.7-RC2\avaje-jsonb-inject-plugin-3.7-RC2.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-jsonb-inject-plugin-3.7-RC2.jar
+[INFO] Copying artifact 'io.avaje:avaje-validator:jar:2.13:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-validator\2.13\avaje-validator-2.13.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-validator-2.13.jar
+[INFO] Copying artifact 'io.avaje:avaje-validator-inject-plugin:jar:2.13:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-validator-inject-plugin\2.13\avaje-validator-inject-plugin-2.13.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-validator-inject-plugin-2.13.jar
+[INFO] Copying artifact 'io.avaje:avaje-validator-http-plugin:jar:2.13:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-validator-http-plugin\2.13\avaje-validator-http-plugin-2.13.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-validator-http-plugin-2.13.jar
+[INFO] Copying artifact 'io.avaje:avaje-validator-constraints:jar:2.13:compile' (C:\Users\dony\.m2\repository\io\avaje\avaje-validator-constraints\2.13\avaje-validator-constraints-2.13.jar) to D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\modules\avaje-validator-constraints-2.13.jar
+[INFO] 
+[INFO] --- native:0.10.2:compile-no-fork (build-native) @ avaje-jex-realworld ---
+[INFO] Found GraalVM installation from JAVA_HOME variable.
+Downloading from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/graalvm-reachability-metadata/0.10.2/graalvm-reachability-metadata-0.10.2-repository.zip
+Downloaded from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/graalvm-reachability-metadata/0.10.2/graalvm-reachability-metadata-0.10.2-repository.zip (251 kB at 601 kB/s)
+[INFO] Downloaded GraalVM reachability metadata repository from file:/C:/Users/dony/.m2/repository/org/graalvm/buildtools/graalvm-reachability-metadata/0.10.2/graalvm-reachability-metadata-0.10.2-repository.zip
+[INFO] [graalvm reachability metadata repository for com.fasterxml.jackson.core:jackson-databind:2.15.4]: Configuration directory not found. Trying latest version.
+[INFO] [graalvm reachability metadata repository for com.fasterxml.jackson.core:jackson-databind:2.15.4]: Configuration directory is com.fasterxml.jackson.core\jackson-databind\2.15.2
+[INFO] [graalvm reachability metadata repository for org.postgresql:postgresql:42.7.7]: Configuration directory not found. Trying latest version.
+[INFO] [graalvm reachability metadata repository for org.postgresql:postgresql:42.7.7]: Configuration directory is org.postgresql\postgresql\42.3.4
+[INFO] Executing: D:\apps\jdk\graalvm-jdk-24.0.2+11.1\bin\native-image.cmd @target\tmp\native-image-7426883672537980337.args com.avaje.jdk.realworld.AvajeRealWorldApplication
+========================================================================================================================
+GraalVM Native Image: Generating 'avaje-jex-realworld' (executable)...
+========================================================================================================================
+For detailed information and explanations on the build output, visit:
+https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+------------------------------------------------------------------------------------------------------------------------
+[1/8] Initializing...                                                                                   (13.6s @ 0.11GB)
+ Java version: 24.0.2+11, vendor version: Oracle GraalVM 24.0.2+11.1
+ Graal compiler: optimization level: 2, target machine: x86-64-v3, PGO: ML-inferred
+ C compiler: cl.exe (microsoft, x64, 19.40.33811)
+ Garbage collector: Serial GC (max heap size: 80% of RAM)
+ 1 user-specific feature(s):
+ - com.oracle.svm.thirdparty.gson.GsonFeature
+------------------------------------------------------------------------------------------------------------------------
+ 2 experimental option(s) unlocked:
+ - '-H:Log' (origin(s): command line)
+ - '-H:IncludeResources': Use a resource-config.json in your META-INF/native-image/<groupID>/<artifactID> directory instead. (origin(s): command line)
+------------------------------------------------------------------------------------------------------------------------
+Build resources:
+ - 11.64GB of memory (75.6% of 15.41GB system memory, determined at start)
+ - 8 thread(s) (100.0% of 8 available processor(s), determined at start)
+[2/8] Performing analysis...  [******]                                                                  (48.0s @ 1.17GB)
+   12,488 reachable types   (87.1% of   14,337 total)
+   19,802 reachable fields  (57.3% of   34,569 total)
+   70,259 reachable methods (60.0% of  117,182 total)
+    4,063 types,    24 fields, and   757 methods registered for reflection
+       75 types,    55 fields, and    67 methods registered for JNI access
+        5 native libraries: crypt32, ncrypt, psapi, version, winhttp
+[3/8] Building universe...                                                                               (7.7s @ 1.38GB)
+[4/8] Parsing methods...      [****]                                                                    (19.2s @ 1.55GB)
+[5/8] Inlining methods...     [***]                                                                      (5.5s @ 1.08GB)
+[6/8] Compiling methods...    [***********]                                                            (123.7s @ 1.87GB)
+[7/8] Laying out methods...   [****]                                                                    (12.2s @ 2.39GB)
+[8/8] Creating image...       [***]                                                                      (6.3s @ 2.73GB)
+  35.91MB (57.30%) for code area:    39,387 compilation units
+  25.56MB (40.79%) for image heap:  334,444 objects and 229 resources
+   1.19MB ( 1.91%) for other data
+  62.66MB in total
+------------------------------------------------------------------------------------------------------------------------
+Top 10 origins of code area:                                Top 10 object types in image heap:
+  13.79MB java.base                                            8.77MB byte[] for code metadata
+   5.69MB svm.jar (Native Image)                               4.19MB byte[] for java.lang.String
+   4.12MB java.xml                                             2.38MB java.lang.String
+   2.75MB ebean-core-15.11.0.jar                               2.28MB java.lang.Class
+   2.13MB jackson-databind-2.15.4.jar                          1.15MB byte[] for embedded resources
+   1.64MB postgresql-42.7.7.jar                              841.82kB byte[] for general heap data
+ 563.94kB java.security.jgss                                 733.18kB byte[] for reflection metadata
+ 483.03kB jackson-core-2.15.4.jar                            585.38kB com.oracle.svm.core.hub.DynamicHubCompanion
+ 430.36kB ebean-api-15.11.0.jar                              494.16kB heap alignment
+ 426.45kB rainbowgum-core-0.8.2.jar                          401.13kB java.util.HashMap$Node
+   3.65MB for 60 more packages                                 3.82MB for 2599 more object types
+                            Use '--emit build-report' to create a report with more details.
+------------------------------------------------------------------------------------------------------------------------
+Security report:
+ - Binary includes Java deserialization.
+ - Use '--enable-sbom' to assemble a Software Bill of Materials (SBOM).
+------------------------------------------------------------------------------------------------------------------------
+Recommendations:
+ PGO:  Use Profile-Guided Optimizations ('--pgo') for improved throughput.
+ HEAP: Set max heap for improved and more predictable memory usage.
+ CPU:  Enable more CPU features with '-march=native' for improved performance.
+ QBM:  Use the quick build mode ('-Ob') to speed up builds during development.
+------------------------------------------------------------------------------------------------------------------------
+                       22.0s (9.1% of total time) in 3028 GCs | Peak RSS: 2.81GB | CPU load: 4.65
+------------------------------------------------------------------------------------------------------------------------
+Build artifacts:
+ D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\avaje-jex-realworld.exe (executable)
+ D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\jaas.dll (jdk_library)
+ D:\xxxxx\work\avaje\avaje-httpserver-realworld\target\w2k_lsa_auth.dll (jdk_library)
+========================================================================================================================
+Finished generating 'avaje-jex-realworld' in 4m 1s.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  04:35 min
+[INFO] Finished at: 2025-09-13T10:43:42+08:00
+[INFO] ------------------------------------------------------------------------
