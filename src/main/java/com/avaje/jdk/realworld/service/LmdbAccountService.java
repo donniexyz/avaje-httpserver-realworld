@@ -148,6 +148,7 @@ public class LmdbAccountService implements AutoCloseable {
             log.info("bbFactory getBufferPool: {}", asBb.getBufferPool());
             asBb.getBufferPool().close();
         }
+        keyFactory.close();
         env.close();
         Files.walk(path).sorted(Comparator.reverseOrder()).map(Path::toFile).forEach(File::delete);
     }

@@ -1,0 +1,7 @@
+EXECUTION
+=========
+
+currently this VM args are necessary:
+    -ea --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.nio=lmdbjava --add-opens=java.base/sun.nio.ch=lmdbjava --add-opens java.base/java.nio=avaje.realworld --add-opens java.base/jdk.internal.ref=avaje.realworld
+
+

@@ -1,5 +1,6 @@
 package com.avaje.jdk.realworld.service;
 
+import com.avaje.jdk.realworld.service.support.Cleaner;
 import com.google.flatbuffers.FlatBufferBuilder;
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,7 +24,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 3. These slices are stored in a blocking queue, which acts as the object pool.
  * 4. If the pool becomes empty, it can dynamically grow by allocating additional arenas.
  * 5. `newByteBuffer` takes a slice from the queue, triggering growth if necessary.
- * 5. `releaseByteBuffer` returns a slice to the queue.
+ * 6. `releaseByteBuffer` returns a slice to the queue.
  *
  * <p><b>Benefits:</b>
  * - Reduces system calls for memory allocation, improving performance.
@@ -31,7 +32,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * - Virtually zero allocation overhead after initial setup.
  */
 @Slf4j
-public final class ArenaByteBufferFactory extends FlatBufferBuilder.ByteBufferFactory {
+public final class ArenaByteBufferFactory extends FlatBufferBuilder.ByteBufferFactory implements AutoCloseable {
 
   /** Holds all the slices from all arenas. */
   private final BlockingQueue<ByteBuffer> pool;
@@ -50,16 +51,13 @@ public final class ArenaByteBufferFactory extends FlatBufferBuilder.ByteBufferFa
   /**
    * Creates an Arena allocator.
    *
-   * @param initialCapacity The total size of the memory arena to allocate (e.g., 1MB).
+   * @param initialCapacity The size of the first memory arena to allocate (e.g., 1MB).
    * @param growCapacity The size of each new arena to allocate when the pool is exhausted. If <= 0, no growth will occur.
    * @param sliceCapacity The fixed size of each slice to be served (e.g., 64 bytes for a UUID key).
    * @param timeoutMillis The time to wait to borrow a slice before failing.
    * @param maxCapacity The maximum total memory this arena is allowed to allocate.
    */
   public ArenaByteBufferFactory(int initialCapacity, int growCapacity, int sliceCapacity, int timeoutMillis, long maxCapacity) {
-    if (initialCapacity < sliceCapacity) {
-      throw new IllegalArgumentException("Total capacity must be >= slice capacity");
-    }
     if (growCapacity > 0 && growCapacity < sliceCapacity) { // Only validate if growth is enabled
       throw new IllegalArgumentException("Grow capacity must be >= slice capacity");
     }
@@ -114,20 +112,19 @@ public final class ArenaByteBufferFactory extends FlatBufferBuilder.ByteBufferFa
       }
 
       // After growing, try one more time to get a buffer.
-      // This could still fail if the grow operation was small and all new buffers were taken.
-      buffer = pool.poll(timeoutMillis, TimeUnit.MILLISECONDS);
-      if (buffer != null) {
-        return buffer;
+      // A non-blocking poll is tried first, as the queue was just populated.
+      buffer = pool.poll();
+      if (buffer == null) {
+        // Fall back to a blocking poll if contention is extremely high
+        // and another thread took all the new buffers already.
+        buffer = pool.poll(timeoutMillis, TimeUnit.MILLISECONDS);
       }
+    return buffer;
 
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
       throw new RuntimeException("Interrupted while waiting for a ByteBuffer from the arena", e);
     }
-
-    // If we reach here, it means the pool was empty, we grew it, and it was still empty after a timeout.
-    // This indicates extreme contention or a very small growCapacity.
-    throw new RuntimeException("Could not borrow a ByteBuffer from the arena even after attempting to grow.");
   }
 
   private void addNewArena(int arenaCapacity) {
@@ -162,4 +159,20 @@ public final class ArenaByteBufferFactory extends FlatBufferBuilder.ByteBufferFa
     }
   }
 
+  /**
+   * Cleans up the direct memory buffers allocated by this factory.
+   * This helps the GC to release the off-heap memory in a more deterministic way.
+   */
+  @Override
+  public void close() {
+    log.info("Closing ArenaByteBufferFactory. Releasing {} arenas with total capacity of {} bytes.", arenas.size(), currentTotalCapacity.get());
+    growLock.lock();
+    try {
+      arenas.forEach(Cleaner::clean);
+      arenas.clear();
+      pool.clear();
+    } finally {
+      growLock.unlock();
+    }
+  }
 }
