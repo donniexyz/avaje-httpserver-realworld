@@ -2,10 +2,10 @@ package com.avaje.jdk.realworld.service;
 
 import com.google.flatbuffers.FlatBufferBuilder;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
-import org.jetbrains.annotations.NotNull;
 
 import java.nio.ByteBuffer;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -68,7 +68,7 @@ public class DirectByteBufferPooledFactory extends FlatBufferBuilder.ByteBufferF
 
     // -----------------------------------------------------------
 
-    private static @NotNull GenericObjectPoolConfig<ByteBuffer> getPoolConfig() {
+    private static @NonNull GenericObjectPoolConfig<ByteBuffer> getPoolConfig() {
         GenericObjectPoolConfig<ByteBuffer> DEFAULT_POOL_CONFIG = new GenericObjectPoolConfig<>();
         DEFAULT_POOL_CONFIG.setMinIdle(2000);
         DEFAULT_POOL_CONFIG.setMaxTotal(50000);

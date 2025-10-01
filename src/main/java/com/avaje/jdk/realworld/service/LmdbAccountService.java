@@ -1,7 +1,5 @@
 package com.avaje.jdk.realworld.service;
 
-import com.avaje.jdk.realworld.models.flat.Account;
-import com.google.flatbuffers.FlatBufferBuilder;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
@@ -43,6 +41,7 @@ public class LmdbAccountService implements AutoCloseable {
     public LmdbAccountService(long mapSize) {
         try {
             this.path = Files.createTempDirectory("lmdb-accounts");
+            log.info("lmdb-accounts path: {}", path);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -61,41 +60,41 @@ public class LmdbAccountService implements AutoCloseable {
 
     }
 
-    public com.avaje.jdk.realworld.service.Account save(com.avaje.jdk.realworld.service.Account account) {
-        final String id = UUID.randomUUID().toString();
-        account.setId(id);
+    public AccountDTO save(AccountDTO accountDTO) {
+        final String generatedId = UUID.randomUUID().toString();
+        accountDTO.setId(generatedId);
 
-        try (ClosableFlatBufferBuilder builder = new ClosableFlatBufferBuilder.Unsafe(1024, bbFactory)) {
+        try (ClosableFlatBufferBuilder builder = new ClosableFlatBufferBuilder(1024, bbFactory)) {
 
-            final int email = builder.createString(account.getEmail());
-            final int username = builder.createString(account.getUsername());
-            final int password = builder.createString(account.getPassword());
-            final int bio = builder.createString(account.getBio());
-            final int image = builder.createString(account.getImage());
-            final int idOffset = builder.createString(id);
+            final int emailOffset = builder.createString(accountDTO.getEmail());
+            final int usernameOffset = builder.createString(accountDTO.getUsername());
+            final int passwordOffset = builder.createString(accountDTO.getPassword());
+            final int bioOffset = builder.createString(accountDTO.getBio());
+            final int imageOffset = builder.createString(accountDTO.getImage());
+            final int idOffset = builder.createString(accountDTO.getId());
 
-            Account.startAccount(builder);
-            Account.addId(builder, idOffset);
-            Account.addEmail(builder, email);
-            Account.addUsername(builder, username);
-            Account.addPassword(builder, password);
-            Account.addBio(builder, bio);
-            Account.addImage(builder, image);
-            final int accountOffset = Account.endAccount(builder);
+            com.avaje.jdk.realworld.models.flat.Account.startAccount(builder);
+            com.avaje.jdk.realworld.models.flat.Account.addId(builder, idOffset);
+            com.avaje.jdk.realworld.models.flat.Account.addEmail(builder, emailOffset);
+            com.avaje.jdk.realworld.models.flat.Account.addUsername(builder, usernameOffset);
+            com.avaje.jdk.realworld.models.flat.Account.addPassword(builder, passwordOffset);
+            com.avaje.jdk.realworld.models.flat.Account.addBio(builder, bioOffset);
+            com.avaje.jdk.realworld.models.flat.Account.addImage(builder, imageOffset);
+            final int accountOffset = com.avaje.jdk.realworld.models.flat.Account.endAccount(builder);
 
-            builder.finish(accountOffset);
+            com.avaje.jdk.realworld.models.flat.Account.finishAccountBuffer(builder, accountOffset);
 
             final ByteBuffer value = builder.dataBuffer();
 
             final ByteBuffer key = ByteBuffer.allocateDirect(env.getMaxKeySize());
-            key.put(id.getBytes(UTF_8)).flip();
+            key.put(accountDTO.getId().getBytes(UTF_8)).flip();
 
             dbi.put(key, value);
-            return account;
+            return accountDTO;
         }
     }
 
-    public com.avaje.jdk.realworld.service.Account findById(String id) {
+    public AccountDTO findById(String id) {
         final ByteBuffer key = ByteBuffer.allocateDirect(env.getMaxKeySize());
         key.put(id.getBytes(UTF_8)).flip();
 
@@ -105,8 +104,8 @@ public class LmdbAccountService implements AutoCloseable {
                 return null;
             }
 
-            final Account flatAccount = Account.getRootAsAccount(foundValue);
-            return new com.avaje.jdk.realworld.service.Account(
+            final com.avaje.jdk.realworld.models.flat.Account flatAccount = com.avaje.jdk.realworld.models.flat.Account.getRootAsAccount(foundValue);
+            return new AccountDTO(
                     flatAccount.email(),
                     flatAccount.username(),
                     flatAccount.password(),

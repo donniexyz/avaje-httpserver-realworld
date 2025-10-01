@@ -22,7 +22,7 @@ class LmdbAccountServiceTest {
     try (final var service = new LmdbAccountService(mapSize);
         final var executor = Executors.newVirtualThreadPerTaskExecutor()) {
 
-      final List<Future<Account>> futures = new ArrayList<>();
+      final List<Future<AccountDTO>> futures = new ArrayList<>();
       for (int i = 0; i < numberOfTransactions; i++) {
         final int id = i;
         futures.add(
@@ -30,7 +30,7 @@ class LmdbAccountServiceTest {
                 () -> {
                   final var account =
                       service.save(
-                          new Account(
+                          new AccountDTO(
                               "test" + id + "@test.com", "test" + id, "test" + id, "bio", "image", null));
                   final var found = service.findById(account.getId());
                   assertNotNull(found);
@@ -40,7 +40,7 @@ class LmdbAccountServiceTest {
       }
 
       assertEquals(numberOfTransactions, futures.size());
-      for (Future<Account> future : futures) {
+      for (Future<AccountDTO> future : futures) {
         try {
           assertNotNull(future.get());
         } catch (Exception e) {

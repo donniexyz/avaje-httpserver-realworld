@@ -19,11 +19,11 @@ public class ByteBufferObjectFactory extends BasePooledObjectFactory<ByteBuffer>
 
     private final int maxBufferSize;
     private boolean littleEndian;
-    private static final AtomicInteger cnt = new AtomicInteger(0);
+    private final AtomicInteger count = new AtomicInteger(0);
 
     @Override
     public ByteBuffer create() throws Exception {
-        int cnt = ByteBufferObjectFactory.cnt.incrementAndGet();
+        int cnt = count.incrementAndGet();
         if (cnt % 1000 == 0) log.info("crete: {}", cnt);
         return ByteBuffer.allocateDirect(maxBufferSize).order(littleEndian ? ByteOrder.LITTLE_ENDIAN : ByteOrder.BIG_ENDIAN);
     }
