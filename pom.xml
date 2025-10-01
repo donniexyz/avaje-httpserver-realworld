@@ -210,6 +210,25 @@
         </configuration>
       </plugin>
 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.5.4</version>
+        <configuration>
+          <argLine>
+              -ea
+              --add-opens java.base/java.nio=ALL-UNNAMED
+              --add-opens java.base/sun.nio.ch=ALL-UNNAMED
+              --add-opens java.base/java.nio=lmdbjava
+              --add-opens=java.base/sun.nio.ch=lmdbjava
+              --add-opens java.base/java.nio=avaje.realworld
+              --add-opens java.base/jdk.internal.ref=avaje.realworld
+              --add-opens java.base/jdk.internal.ref=ALL-UNNAMED
+              --enable-native-access=ALL-UNNAMED
+          </argLine>
+        </configuration>
+      </plugin>
+
 	  <!-- Create Modular Jar and copy dependencies -->
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
