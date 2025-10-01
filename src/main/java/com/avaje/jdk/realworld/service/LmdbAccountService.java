@@ -74,24 +74,7 @@ public class LmdbAccountService implements AutoCloseable {
 
         try (ClosableFlatBufferBuilder builder = new ClosableFlatBufferBuilder(BUFFER_SIZE, bbFactory)) {
 
-            final int emailOffset = builder.createString(accountDTO.getEmail());
-            final int usernameOffset = builder.createString(accountDTO.getUsername());
-            final int passwordOffset = builder.createString(accountDTO.getPassword());
-            final int bioOffset = builder.createString(accountDTO.getBio());
-            final int imageOffset = builder.createString(accountDTO.getImage());
-            final int idOffset = builder.createString(accountDTO.getId());
-
-            com.avaje.jdk.realworld.models.flat.Account.startAccount(builder);
-            com.avaje.jdk.realworld.models.flat.Account.addId(builder, idOffset);
-            com.avaje.jdk.realworld.models.flat.Account.addEmail(builder, emailOffset);
-            com.avaje.jdk.realworld.models.flat.Account.addUsername(builder, usernameOffset);
-            com.avaje.jdk.realworld.models.flat.Account.addPassword(builder, passwordOffset);
-            com.avaje.jdk.realworld.models.flat.Account.addBio(builder, bioOffset);
-            com.avaje.jdk.realworld.models.flat.Account.addImage(builder, imageOffset);
-            final int accountOffset = com.avaje.jdk.realworld.models.flat.Account.endAccount(builder);
-
-            com.avaje.jdk.realworld.models.flat.Account.finishAccountBuffer(builder, accountOffset);
-
+            accountDTO.fill(builder);
             final ByteBuffer value = builder.dataBuffer();
 
             // Use the Arena factory for the key
