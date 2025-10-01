@@ -32,7 +32,9 @@ public class LmdbAccountService implements AutoCloseable {
 
     // Arena allocator specifically for our fixed-size UUID keys.
     // 1MB arena, with 64-byte slices (enough for a UUID string).
-    ArenaByteBufferFactory keyFactory = new ArenaByteBufferFactory(1024 * 1024, 64, 10);
+    // Will grow by 512KB if the initial pool is exhausted.
+    // Max capacity is set to 4MB.
+    ArenaByteBufferFactory keyFactory = new ArenaByteBufferFactory(1024 * 1024, 512 * 1024, 64, 10, 4 * 1024 * 1024);
 
     @Inject
     public LmdbAccountService() {
