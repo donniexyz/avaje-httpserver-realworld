@@ -30,6 +30,10 @@ public class LmdbAccountService implements AutoCloseable {
 
     DirectByteBufferPooledFactory bbFactory;
 
+    // Arena allocator specifically for our fixed-size UUID keys.
+    // 1MB arena, with 64-byte slices (enough for a UUID string).
+    ArenaByteBufferFactory keyFactory = new ArenaByteBufferFactory(1024 * 1024, 64, 10);
+
     @Inject
     public LmdbAccountService() {
         this(10 * 1024 * 1024); // 10 MB
@@ -86,32 +90,52 @@ public class LmdbAccountService implements AutoCloseable {
 
             final ByteBuffer value = builder.dataBuffer();
 
-            final ByteBuffer key = ByteBuffer.allocateDirect(env.getMaxKeySize());
-            key.put(accountDTO.getId().getBytes(UTF_8)).flip();
-
-            dbi.put(key, value);
-            return accountDTO;
+            // Use the Arena factory for the key
+            ByteBuffer key = null;
+            try {
+                key = keyFactory.newByteBuffer(64);
+                if (key == null) {
+                    throw new RuntimeException("Could not borrow a key buffer from the arena");
+                }
+                key.put(accountDTO.getId().getBytes(UTF_8)).flip();
+                dbi.put(key, value);
+                return accountDTO;
+            } finally {
+                if (key != null) {
+                    keyFactory.releaseByteBuffer(key);
+                }
+            }
         }
     }
 
     public AccountDTO findById(String id) {
-        final ByteBuffer key = ByteBuffer.allocateDirect(env.getMaxKeySize());
-        key.put(id.getBytes(UTF_8)).flip();
-
-        try (Txn<ByteBuffer> txn = env.txnRead()) {
-            final ByteBuffer foundValue = dbi.get(txn, key);
-            if (foundValue == null) {
-                return null;
+        ByteBuffer key = null;
+        try {
+            key = keyFactory.newByteBuffer(64);
+            if (key == null) {
+                throw new RuntimeException("Could not borrow a key buffer from the arena");
             }
+            key.put(id.getBytes(UTF_8)).flip();
 
-            final com.avaje.jdk.realworld.models.flat.Account flatAccount = com.avaje.jdk.realworld.models.flat.Account.getRootAsAccount(foundValue);
-            return new AccountDTO(
-                    flatAccount.email(),
-                    flatAccount.username(),
-                    flatAccount.password(),
-                    flatAccount.bio(),
-                    flatAccount.image(),
-                    flatAccount.id());
+            try (Txn<ByteBuffer> txn = env.txnRead()) {
+                final ByteBuffer foundValue = dbi.get(txn, key);
+                if (foundValue == null) {
+                    return null;
+                }
+
+                final com.avaje.jdk.realworld.models.flat.Account flatAccount = com.avaje.jdk.realworld.models.flat.Account.getRootAsAccount(foundValue);
+                return new AccountDTO(
+                        flatAccount.email(),
+                        flatAccount.username(),
+                        flatAccount.password(),
+                        flatAccount.bio(),
+                        flatAccount.image(),
+                        flatAccount.id());
+            }
+        } finally {
+            if (key != null) {
+                keyFactory.releaseByteBuffer(key);
+            }
         }
     }
 
